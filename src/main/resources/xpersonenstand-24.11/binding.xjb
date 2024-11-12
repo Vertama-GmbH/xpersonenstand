@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jaxb:bindings
+  version="3.0"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:jaxb="https://jakarta.ee/xml/ns/jaxb"
+  xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+  xmlns:annox="urn:jaxb.jvnet.org:annox"
+  xmlns:xink="http://www.osci.de/xinneres/basisnachricht/6"
+  jaxb:extensionBindingPrefixes="xjc annox"
+>
+
+  <!-- Get rid of compilation errors in the generated Code where 'Todestag' cannot 
+       be the name of a static nested class inside of class 'Todestag' (WAT). Just rename the type
+       to 'InnerTodestag' -->
+  <!-- XPath patterns developed with the help of http://xpather.com -->
+  <jaxb:bindings schemaLocation="./xpersonenstand-nachrichten-portale.xsd" node="/xs:schema">
+    <!-- These bindings must match exactly one element in the schema. Class name remapping can
+         (only) be done on 'xs:simpleType' and 'xs:complexType' elements. -->
+    <jaxb:bindings
+      node="//xs:complexType[@name='Portal2StA.Sterbefall']//xs:choice/xs:element[@name='todestag']/xs:complexType">
+      <jaxb:class name="InnerTodestag" />
+    </jaxb:bindings>
+
+    <jaxb:bindings
+      node="//xs:complexType[@name='Todesbescheinigung.Sterbefall']//xs:choice/xs:element[@name='todestag']/xs:complexType">
+      <jaxb:class name="InnerTodestag" />
+    </jaxb:bindings>
+
+    <jaxb:bindings
+      node="//xs:element[@name='portal2StA.Sterbefall.084010']//xs:sequence/xs:element[@name='todestag']/xs:complexType">
+      <jaxb:class name="InnerTodestag" />
+    </jaxb:bindings>
+
+  </jaxb:bindings>
+
+</jaxb:bindings>

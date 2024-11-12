@@ -1,0 +1,13 @@
+[versions]
+jakarta-xml-bind-jakarta-xml-bind-api = "4.0.2"
+org-glassfish-jaxb-jaxb-runtime = "4.0.5"
+com-intershop-gradle-jaxb = "7.0.0"
+org-jreleaser = "1.14.0"
+
+[libraries]
+jakarta-xml-bind-jakarta-xml-bind-api = { module = "jakarta.xml.bind:jakarta.xml.bind-api", version.ref = "jakarta-xml-bind-jakarta-xml-bind-api" }
+org-glassfish-jaxb-jaxb-runtime = { module = "org.glassfish.jaxb:jaxb-runtime", version.ref = "org-glassfish-jaxb-jaxb-runtime" }
+
+[plugins]
+com-intershop-gradle-jaxb = { id = "com.intershop.gradle.jaxb", version.ref = "com-intershop-gradle-jaxb" }
+org-jreleaser = { id = "org.jreleaser", version.ref = "org-jreleaser" }
