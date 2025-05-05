@@ -1,7 +1,7 @@
 package xpersonenstand
 
 import com.vertama.xpersonenstand.XPersonenstandMarshaller
-import de.domap.xpsw.xpsw2411.*
+import de.domap.xpsw.xpsw2505.*
 import de.osci.xinneres.behoerde._6.*
 import de.osci.xinneres.geschlecht._1.CodeGeschlecht
 import de.osci.xinneres.kommunikation._5.CodeErreichbarkeit
@@ -55,9 +55,16 @@ class XPersonenstandTest {
             produktversion = "0.1"
             standard = "XPersonenstand"
             test = "test"
-            version = "24.11"
+            version = "25.05"
 
-            nachrichtenkopf = buildNachrichtenKopf()
+            nachrichtenkopf = buildNachrichtenKopf(
+                Code().apply {
+                    code = "081020"
+                    name = "portal2StA.Geburt.081020"
+                    listURI = "urn:xoev-de:xpersonenstand:codelist:nachrichtentyp"
+                    listVersionID = "25.05"
+                }
+            )
             nameEinrichtung = "NameEinrichtung"
             geburtsangaben = Anz2StATemplateGeburtsanzeige.Geburtsangaben().apply {
                 ort = Ereignisort().apply {
@@ -100,7 +107,14 @@ class XPersonenstandTest {
 
     private fun buildPortal2StASterbefall084020(): Portal2StASterbefall084020 {
         return Portal2StASterbefall084020().apply {
-            nachrichtenkopf = buildNachrichtenKopf()
+            nachrichtenkopf = buildNachrichtenKopf(
+                Code().apply {
+                    code = "084020"
+                    name = "portal2StA.Sterbefall.084020"
+                    listURI = "urn:xoev-de:xpersonenstand:codelist:nachrichtentyp"
+                    listVersionID = "25.05"
+                }
+            )
             ansprechpartner = "Ansprechpartner"
             sterbefall = Portal2StASterbefall().apply {
                 todestag = Portal2StASterbefall.Todestag().apply {
@@ -143,16 +157,11 @@ class XPersonenstandTest {
         }
     }
 
-    private fun buildNachrichtenKopf(): NachrichtenkopfG2G {
+    private fun buildNachrichtenKopf(nachrichtenTyp: Code): NachrichtenkopfG2G {
         return NachrichtenkopfG2G().apply {
             identifikationNachricht = IdentifikationNachricht().apply {
                 nachrichtenUUID = "FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0"
-                nachrichtentyp = Code().apply {
-                    code = "081020"
-                    name = "portal2StA.Geburt.081020"
-                    listURI = "urn:xoev-de:xpersonenstand:codelist:nachrichtentyp"
-                    listVersionID = "24.11"
-                }
+                nachrichtentyp = nachrichtenTyp
                 erstellungszeitpunkt =
                     DatatypeFactory.newDefaultInstance()
                         .newXMLGregorianCalendar(2024, 11, 1, 10, 0, 0, 0, 2)

@@ -7,7 +7,7 @@
 
 package de.osci.xinneres.allgemeinername._4;
 
-import de.domap.xpsw.xpsw2411.AllgemeinerNamePersonenstandswesen;
+import de.domap.xpsw.xpsw2505.AllgemeinerNamePersonenstandswesen;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlSeeAlso;

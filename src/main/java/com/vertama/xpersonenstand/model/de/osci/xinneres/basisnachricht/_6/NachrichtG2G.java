@@ -47,7 +47,7 @@ import jakarta.xml.bind.annotation.XmlType;
     "nachrichtenkopf"
 })
 @XmlSeeAlso({
-    de.domap.xpsw.xpsw2411.NachrichtG2G.class
+    de.domap.xpsw.xpsw2505.NachrichtG2G.class
 })
 public abstract class NachrichtG2G {
 

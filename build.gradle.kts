@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "com.vertama"
-version = "1.0.0"
+version = "2.0.0"
 
 repositories {
     mavenLocal()
@@ -29,9 +29,9 @@ kotlin {
 jaxb {
     javaGen {
         register("xpersonenstand") {
-            schema = file("src/main/resources/xpersonenstand-24.11/xpersonenstand-nachrichten-portale.xsd")
+            schema = file("src/main/resources/xpersonenstand-25.05/xpersonenstand-nachrichten-portale.xsd")
             outputDir = file("src/main/java/com/vertama/xpersonenstand/model")
-            binding = file("src/main/resources/xpersonenstand-24.11/binding.xjb")
+            binding = file("src/main/resources/xpersonenstand-25.05/binding.xjb")
         }
     }
 }

@@ -7,8 +7,8 @@
 
 package de.osci.xinneres.meldeanschrift._5;
 
-import de.domap.xpsw.xpsw2411.AnschriftEingeschraenkt;
-import de.domap.xpsw.xpsw2411.AnschriftInland;
+import de.domap.xpsw.xpsw2505.AnschriftEingeschraenkt;
+import de.domap.xpsw.xpsw2505.AnschriftInland;
 import de.osci.xinneres.codes.gemeindeverzeichnis._3.CodeGemeindeVZAmtlicherGemeindeschluessel;
 import de.osci.xinneres.postanschrift._5.PostalischeInlandsanschriftBasis;
 import jakarta.xml.bind.annotation.XmlAccessType;

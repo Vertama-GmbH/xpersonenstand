@@ -49,7 +49,7 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     "erstellungszeitpunkt"
 })
 @XmlSeeAlso({
-    de.domap.xpsw.xpsw2411.IdentifikationNachricht.class,
+    de.domap.xpsw.xpsw2505.IdentifikationNachricht.class,
     IdentifikationNachrichtTyp4 .class
 })
 public class IdentifikationNachricht {

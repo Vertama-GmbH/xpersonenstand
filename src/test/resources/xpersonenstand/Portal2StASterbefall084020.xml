@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ns2:portal2StA.Sterbefall.084020 xmlns:ns2="http://xpsw.domap.de/xpsw2411">
+<ns2:portal2StA.Sterbefall.084020 xmlns:ns2="http://xpsw.domap.de/xpsw2505">
     <nachrichtenkopf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:Nachrichtenkopf.G2G">
         <identifikation.nachricht xsi:type="ns2:Identifikation.Nachricht">
             <nachrichtenUUID>FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0</nachrichtenUUID>
-            <nachrichtentyp listURI="urn:xoev-de:xpersonenstand:codelist:nachrichtentyp" listVersionID="24.11">
-                <code>081020</code>
-                <name>portal2StA.Geburt.081020</name>
+            <nachrichtentyp listURI="urn:xoev-de:xpersonenstand:codelist:nachrichtentyp" listVersionID="25.05">
+                <code>084020</code>
+                <name>portal2StA.Sterbefall.084020</name>
             </nachrichtentyp>
             <erstellungszeitpunkt>2024-11-01T10:00:00.000+00:02</erstellungszeitpunkt>
         </identifikation.nachricht>

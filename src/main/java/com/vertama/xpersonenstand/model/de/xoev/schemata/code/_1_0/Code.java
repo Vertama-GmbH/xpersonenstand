@@ -7,40 +7,39 @@
 
 package de.xoev.schemata.code._1_0;
 
-import de.domap.xpsw.xpsw2411.CodeAGSCode;
-import de.domap.xpsw.xpsw2411.CodeArtErklaerungBegleitnameCode;
-import de.domap.xpsw.xpsw2411.CodeArtErklaerungEheCode;
-import de.domap.xpsw.xpsw2411.CodeArtNameWiederannahmeCode;
-import de.domap.xpsw.xpsw2411.CodeAufenthaltsrechtCode;
-import de.domap.xpsw.xpsw2411.CodeAufenthaltsstatusCode;
-import de.domap.xpsw.xpsw2411.CodeAusweisartCode;
-import de.domap.xpsw.xpsw2411.CodeBeendigungsgrundFamilienstandCode;
-import de.domap.xpsw.xpsw2411.CodeBeschlussartCode;
-import de.domap.xpsw.xpsw2411.CodeBestattungsartCode;
-import de.domap.xpsw.xpsw2411.CodeFamilienrechtlicheBezeichnungEheregisterCode;
-import de.domap.xpsw.xpsw2411.CodeFamilienrechtlicheBezeichnungGeburtenregisterCode;
-import de.domap.xpsw.xpsw2411.CodeFamilienrechtlicheBezeichnungLPregisterCode;
-import de.domap.xpsw.xpsw2411.CodeFamilienstandMeldewesenCode;
-import de.domap.xpsw.xpsw2411.CodeFamilienstandPersonenstandswesenCode;
-import de.domap.xpsw.xpsw2411.CodeFehlerartCode;
-import de.domap.xpsw.xpsw2411.CodeFehlerartEGSCode;
-import de.domap.xpsw.xpsw2411.CodeIdentifizierungsartCode;
-import de.domap.xpsw.xpsw2411.CodeNachrichtentyp;
-import de.domap.xpsw.xpsw2411.CodeNamensartCode;
-import de.domap.xpsw.xpsw2411.CodeNamensfuehrungCode;
-import de.domap.xpsw.xpsw2411.CodePersonenstandsrechtlicherTatbestandCode;
-import de.domap.xpsw.xpsw2411.CodeRechtsgrundlageCode;
-import de.domap.xpsw.xpsw2411.CodeRegisterart;
-import de.domap.xpsw.xpsw2411.CodeSpracheUebersetzungshilfeCode;
-import de.domap.xpsw.xpsw2411.CodeStaatCode;
-import de.domap.xpsw.xpsw2411.CodeStaatsangehoerigkeitCode;
-import de.domap.xpsw.xpsw2411.CodeStandesamtsnummerCode;
-import de.domap.xpsw.xpsw2411.CodeVerwendungszweckEheurkundeCode;
-import de.domap.xpsw.xpsw2411.CodeVerwendungszweckGeburtsurkundeCode;
-import de.domap.xpsw.xpsw2411.CodeVerwendungszweckLPurkundeCode;
-import de.domap.xpsw.xpsw2411.CodeVerwendungszweckSterbeurkundeCode;
-import de.domap.xpsw.xpsw2411.CodeWahlEhenameCode;
-import de.domap.xpsw.xpsw2411.CodeWahlLPNameCode;
+import de.domap.xpsw.xpsw2505.CodeAGSCode;
+import de.domap.xpsw.xpsw2505.CodeArtErklaerungEheCode;
+import de.domap.xpsw.xpsw2505.CodeArtNameWiederannahmeCode;
+import de.domap.xpsw.xpsw2505.CodeAufenthaltsrechtCode;
+import de.domap.xpsw.xpsw2505.CodeAufenthaltsstatusCode;
+import de.domap.xpsw.xpsw2505.CodeAusweisartCode;
+import de.domap.xpsw.xpsw2505.CodeBeendigungsgrundFamilienstandCode;
+import de.domap.xpsw.xpsw2505.CodeBeschlussartCode;
+import de.domap.xpsw.xpsw2505.CodeBestattungsartCode;
+import de.domap.xpsw.xpsw2505.CodeFamilienrechtlicheBezeichnungEheregisterCode;
+import de.domap.xpsw.xpsw2505.CodeFamilienrechtlicheBezeichnungGeburtenregisterCode;
+import de.domap.xpsw.xpsw2505.CodeFamilienrechtlicheBezeichnungLPregisterCode;
+import de.domap.xpsw.xpsw2505.CodeFamilienstandMeldewesenCode;
+import de.domap.xpsw.xpsw2505.CodeFamilienstandPersonenstandswesenCode;
+import de.domap.xpsw.xpsw2505.CodeFehlerartCode;
+import de.domap.xpsw.xpsw2505.CodeFehlerartEGSCode;
+import de.domap.xpsw.xpsw2505.CodeIdentifizierungsartCode;
+import de.domap.xpsw.xpsw2505.CodeNachrichtentyp;
+import de.domap.xpsw.xpsw2505.CodeNamensartCode;
+import de.domap.xpsw.xpsw2505.CodeNamensfuehrungCode;
+import de.domap.xpsw.xpsw2505.CodePersonenstandsrechtlicherTatbestandCode;
+import de.domap.xpsw.xpsw2505.CodeRechtsgrundlageCode;
+import de.domap.xpsw.xpsw2505.CodeRegisterart;
+import de.domap.xpsw.xpsw2505.CodeSpracheUebersetzungshilfeCode;
+import de.domap.xpsw.xpsw2505.CodeStaatCode;
+import de.domap.xpsw.xpsw2505.CodeStaatsangehoerigkeitCode;
+import de.domap.xpsw.xpsw2505.CodeStandesamtsnummerCode;
+import de.domap.xpsw.xpsw2505.CodeVerwendungszweckEheurkundeCode;
+import de.domap.xpsw.xpsw2505.CodeVerwendungszweckGeburtsurkundeCode;
+import de.domap.xpsw.xpsw2505.CodeVerwendungszweckLPurkundeCode;
+import de.domap.xpsw.xpsw2505.CodeVerwendungszweckSterbeurkundeCode;
+import de.domap.xpsw.xpsw2505.CodeWahlEhenameCode;
+import de.domap.xpsw.xpsw2505.CodeWahlLPNameCode;
 import de.osci.xinneres.auslandsanschrift._5.CodeZielstaat;
 import de.osci.xinneres.basisnachricht._6.CodeNachrichtentypTyp4;
 import de.osci.xinneres.behoerde._6.CodeBehoerdenkennung;
@@ -95,7 +94,6 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlSeeAlso({
     CodeGeschlecht.class,
     CodeAGSCode.class,
-    CodeArtErklaerungBegleitnameCode.class,
     CodeArtErklaerungEheCode.class,
     CodeArtNameWiederannahmeCode.class,
     CodeAufenthaltsrechtCode.class,
