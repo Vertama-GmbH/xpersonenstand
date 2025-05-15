@@ -7,12 +7,14 @@
 
 package de.domap.xpsw.xpsw2505;
 
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.LocalDate;
+import com.vertama.xpersonenstand.adapters.LocalDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
@@ -53,8 +55,10 @@ public class IdentifikationFamilienbuch {
     @XmlElement(required = true)
     protected String kennzeichen2;
     protected String eheschliessungsort;
+    @XmlElement(type = String.class)
+    @XmlJavaTypeAdapter(LocalDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar eheschliessungstag;
+    protected LocalDate eheschliessungstag;
 
     /**
      * Gets the value of the kennzeichen1 property.
@@ -133,10 +137,10 @@ public class IdentifikationFamilienbuch {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getEheschliessungstag() {
+    public LocalDate getEheschliessungstag() {
         return eheschliessungstag;
     }
 
@@ -145,10 +149,10 @@ public class IdentifikationFamilienbuch {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public void setEheschliessungstag(XMLGregorianCalendar value) {
+    public void setEheschliessungstag(LocalDate value) {
         this.eheschliessungstag = value;
     }
 

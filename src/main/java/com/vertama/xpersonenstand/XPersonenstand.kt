@@ -25,7 +25,7 @@ object XPersonenstand {
         val sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI)
 
         val schema = sf.newSchema(
-            this::class.java.getResource("/xpersonenstand-24.11/xpersonenstand-nachrichten-portale.xsd")
+            this::class.java.getResource("/xpersonenstand-25.05/xpersonenstand-nachrichten-portale.xsd")
         )
         val validator = schema.newValidator()
         validator.validate(JAXBSource(context, obj))

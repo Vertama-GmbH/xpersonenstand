@@ -53,7 +53,7 @@
             <ns2:hausnummer>1</ns2:hausnummer>
             <ns2:ort>Geburtsort</ns2:ort>
         </ns2:ort>
-        <ns2:tag>2024-11-01</ns2:tag>
+        <ns2:tag>2024-11-01+00:02</ns2:tag>
         <ns2:uhrzeit>10:00</ns2:uhrzeit>
     </ns2:geburtsangaben>
     <ns2:kind>
@@ -71,7 +71,7 @@
                     <name>Sophia</name>
                 </ns2:vornamen>
             </ns2:namen>
-            <ns2:geburtsdatum>2024-11-01</ns2:geburtsdatum>
+            <ns2:geburtsdatum>2024-11-01+00:02</ns2:geburtsdatum>
             <ns2:anschrift>
                 <hausnummer>2</hausnummer>
                 <postleitzahl>10117</postleitzahl>

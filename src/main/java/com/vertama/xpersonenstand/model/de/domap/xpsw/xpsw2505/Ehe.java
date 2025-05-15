@@ -7,12 +7,14 @@
 
 package de.domap.xpsw.xpsw2505;
 
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.LocalDate;
+import com.vertama.xpersonenstand.adapters.LocalDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
@@ -46,9 +48,10 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class Ehe {
 
-    @XmlElement(required = true)
+    @XmlElement(required = true, type = String.class)
+    @XmlJavaTypeAdapter(LocalDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar tag;
+    protected LocalDate tag;
     @XmlElement(required = true)
     protected String ort;
     @XmlElement(required = true)
@@ -59,10 +62,10 @@ public class Ehe {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTag() {
+    public LocalDate getTag() {
         return tag;
     }
 
@@ -71,10 +74,10 @@ public class Ehe {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public void setTag(XMLGregorianCalendar value) {
+    public void setTag(LocalDate value) {
         this.tag = value;
     }
 

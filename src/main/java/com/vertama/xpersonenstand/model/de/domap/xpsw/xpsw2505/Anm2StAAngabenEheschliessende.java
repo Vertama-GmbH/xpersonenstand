@@ -8,9 +8,10 @@
 package de.domap.xpsw.xpsw2505;
 
 import java.math.BigInteger;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.datatype.XMLGregorianCalendar;
+import com.vertama.xpersonenstand.adapters.LocalDateAdapter;
 import de.osci.xinneres.geschlecht._1.CodeGeschlecht;
 import de.osci.xinneres.kommunikation._5.Kommunikation;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -19,6 +20,7 @@ import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlSeeAlso;
 import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
@@ -81,8 +83,10 @@ public class Anm2StAAngabenEheschliessende {
     protected String familienname;
     protected String geburtsname;
     protected String vornamen;
+    @XmlElement(type = String.class)
+    @XmlJavaTypeAdapter(LocalDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar geburtsdatum;
+    protected LocalDate geburtsdatum;
     @XmlElement(required = true)
     protected String geburtsort;
     protected String geburtsstaat;
@@ -177,10 +181,10 @@ public class Anm2StAAngabenEheschliessende {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getGeburtsdatum() {
+    public LocalDate getGeburtsdatum() {
         return geburtsdatum;
     }
 
@@ -189,10 +193,10 @@ public class Anm2StAAngabenEheschliessende {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public void setGeburtsdatum(XMLGregorianCalendar value) {
+    public void setGeburtsdatum(LocalDate value) {
         this.geburtsdatum = value;
     }
 

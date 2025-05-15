@@ -1,5 +1,6 @@
 package xpersonenstand
 
+import com.vertama.xpersonenstand.XPersonenstand
 import com.vertama.xpersonenstand.XPersonenstandMarshaller
 import de.domap.xpsw.xpsw2505.*
 import de.osci.xinneres.behoerde._6.*
@@ -9,7 +10,10 @@ import de.osci.xinneres.kommunikation._5.Kommunikation
 import de.osci.xinneres.postanschrift._5.PostalischeInlandsanschrift
 import de.osci.xinneres.postanschrift._5.PostalischeInlandsanschriftGebaeudeanschrift
 import de.xoev.schemata.code._1_0.Code
+import org.junit.jupiter.api.assertThrows
+import org.xml.sax.SAXException
 import java.io.ByteArrayOutputStream
+import java.time.LocalDate
 import javax.xml.datatype.DatatypeFactory
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -17,11 +21,42 @@ import kotlin.test.assertEquals
 class XPersonenstandTest {
 
     @Test
+    fun `validation of invalid Portal2StAGeburt081020 throws error`() {
+        val invalidXml = this::class.java.getResource("/xpersonenstand/Portal2StAGeburt081020_invalid.xml")
+            ?: error("XML file of basisnachricht not found in resources.")
+
+        val unmarshalFromFile = XPersonenstandMarshaller.unmarshalFromInputStream(invalidXml.openStream(), Portal2StAGeburt081020::class.java)
+        assertThrows<SAXException> {
+            XPersonenstand.validateOrThrow(unmarshalFromFile)
+        }
+    }
+
+    @Test
+    fun `validation of invalid created Portal2StAGeburt081020 throws error`() {
+        val xps = buildPortal2StAGeburt081020()
+        xps.produkt = null
+
+        assertThrows<SAXException> {
+            XPersonenstand.validateOrThrow(xps)
+        }
+    }
+
+    @Test
+    fun `validation of valid Portal2StAGeburt081020 throws no error`() {
+        val invalidXml = this::class.java.getResource("/xpersonenstand/Portal2StAGeburt081020.xml")
+            ?: error("XML file of basisnachricht not found in resources.")
+
+        val unmarshalFromFile = XPersonenstandMarshaller.unmarshalFromInputStream(invalidXml.openStream(), Portal2StAGeburt081020::class.java)
+        XPersonenstand.validateOrThrow(unmarshalFromFile)
+    }
+
+    @Test
     fun `create valid Portal2StAGeburt081020 xml`() {
         val expectedXml = this::class.java.getResource("/xpersonenstand/Portal2StAGeburt081020.xml")?.readText()
             ?: error("Expected XML file of basisnachricht not found in resources.")
 
         val portal2StAGeburt081020 = buildPortal2StAGeburt081020()
+        XPersonenstand.validateOrThrow(portal2StAGeburt081020)
         val outputStream = ByteArrayOutputStream()
         XPersonenstandMarshaller.marshalToOutputStream(portal2StAGeburt081020, outputStream)
 
@@ -38,6 +73,7 @@ class XPersonenstandTest {
             ?: error("Expected XML file of basisnachricht not found in resources.")
 
         val portal2StASterbefall084020 = buildPortal2StASterbefall084020()
+        XPersonenstand.validateOrThrow(portal2StASterbefall084020)
         val outputStream = ByteArrayOutputStream()
         XPersonenstandMarshaller.marshalToOutputStream(portal2StASterbefall084020, outputStream)
 
@@ -72,7 +108,7 @@ class XPersonenstandTest {
                     hausnummer = "1"
                     ort = "Geburtsort"
                 }
-                tag = DatatypeFactory.newDefaultInstance().newXMLGregorianCalendarDate(2024, 11, 1, 2)
+                tag = LocalDate.of(2024,11,1)
                 uhrzeit = "10:00"
             }
             kind = Anz2StAGeburtKind().apply {
@@ -92,7 +128,7 @@ class XPersonenstandTest {
                             name = "Sophia"
                         }
                     }
-                    geburtsdatum = DatatypeFactory.newDefaultInstance().newXMLGregorianCalendarDate(2024, 11, 1, 2)
+                    geburtsdatum = LocalDate.of(2024,11,1)
                     anschrift = AnschriftInland().apply {
                         hausnummer = "2"
                         postleitzahl = "10117"
@@ -107,6 +143,13 @@ class XPersonenstandTest {
 
     private fun buildPortal2StASterbefall084020(): Portal2StASterbefall084020 {
         return Portal2StASterbefall084020().apply {
+            produkt = "DIGT"
+            produkthersteller = "Vertama GmbH"
+            produktversion = "0.1"
+            standard = "XPersonenstand"
+            test = "test"
+            version = "25.05"
+
             nachrichtenkopf = buildNachrichtenKopf(
                 Code().apply {
                     code = "084020"
@@ -119,7 +162,7 @@ class XPersonenstandTest {
             sterbefall = Portal2StASterbefall().apply {
                 todestag = Portal2StASterbefall.Todestag().apply {
                     todestag = Portal2StASterbefall.Todestag.InnerTodestag().apply {
-                        todestag = DatatypeFactory.newDefaultInstance().newXMLGregorianCalendarDate(2024, 11, 1, 2)
+                        todestag = LocalDate.of(2024,11,1)
                         todeszeit = UhrzeitPersonenstandswesenMitExakt().apply {
                             value = "05:21"
                             isExakt = true

@@ -8,9 +8,10 @@
 package de.domap.xpsw.xpsw2505;
 
 import java.math.BigInteger;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.datatype.XMLGregorianCalendar;
+import com.vertama.xpersonenstand.adapters.LocalDateAdapter;
 import de.osci.xinneres.behoerde._6.Behoerde;
 import de.osci.xinneres.kommunikation._5.Kommunikation;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -19,6 +20,7 @@ import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
@@ -599,8 +601,10 @@ public class Portal2StAGeburt081021
         protected BigInteger anzahlKinder;
         @XmlSchemaType(name = "nonNegativeInteger")
         protected BigInteger anzahlTotgeburten;
+        @XmlElement(type = String.class)
+        @XmlJavaTypeAdapter(LocalDateAdapter.class)
         @XmlSchemaType(name = "date")
-        protected XMLGregorianCalendar geburtsdatumVorherigesKind;
+        protected LocalDate geburtsdatumVorherigesKind;
 
         /**
          * Gets the value of the anzahlKinder property.
@@ -655,10 +659,10 @@ public class Portal2StAGeburt081021
          * 
          * @return
          *     possible object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link String }
          *     
          */
-        public XMLGregorianCalendar getGeburtsdatumVorherigesKind() {
+        public LocalDate getGeburtsdatumVorherigesKind() {
             return geburtsdatumVorherigesKind;
         }
 
@@ -667,10 +671,10 @@ public class Portal2StAGeburt081021
          * 
          * @param value
          *     allowed object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link String }
          *     
          */
-        public void setGeburtsdatumVorherigesKind(XMLGregorianCalendar value) {
+        public void setGeburtsdatumVorherigesKind(LocalDate value) {
             this.geburtsdatumVorherigesKind = value;
         }
 

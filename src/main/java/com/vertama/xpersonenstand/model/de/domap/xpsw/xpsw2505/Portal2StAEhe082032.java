@@ -7,13 +7,15 @@
 
 package de.domap.xpsw.xpsw2505;
 
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.LocalDate;
+import com.vertama.xpersonenstand.adapters.LocalDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
@@ -286,9 +288,10 @@ public class Portal2StAEhe082032
         protected PersonName ehegatte1;
         @XmlElement(required = true)
         protected PersonName ehegatte2;
-        @XmlElement(required = true)
+        @XmlElement(required = true, type = String.class)
+        @XmlJavaTypeAdapter(LocalDateAdapter.class)
         @XmlSchemaType(name = "date")
-        protected XMLGregorianCalendar datumEhe;
+        protected LocalDate datumEhe;
         @XmlElement(required = true)
         protected String ortEhe;
         protected String registernummer;
@@ -346,10 +349,10 @@ public class Portal2StAEhe082032
          * 
          * @return
          *     possible object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link String }
          *     
          */
-        public XMLGregorianCalendar getDatumEhe() {
+        public LocalDate getDatumEhe() {
             return datumEhe;
         }
 
@@ -358,10 +361,10 @@ public class Portal2StAEhe082032
          * 
          * @param value
          *     allowed object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link String }
          *     
          */
-        public void setDatumEhe(XMLGregorianCalendar value) {
+        public void setDatumEhe(LocalDate value) {
             this.datumEhe = value;
         }
 

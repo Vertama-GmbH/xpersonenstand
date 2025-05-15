@@ -7,7 +7,8 @@
 
 package de.domap.xpsw.xpsw2505;
 
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.LocalDate;
+import com.vertama.xpersonenstand.adapters.LocalDateAdapter;
 import de.osci.xinneres.geschlecht._1.CodeGeschlecht;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -15,6 +16,7 @@ import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlSeeAlso;
 import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
@@ -64,8 +66,10 @@ public class Portal2StASterbefallVerstorbenerEinrichtung {
     @XmlElement(required = true)
     protected String familienname;
     protected String geburtsname;
+    @XmlElement(type = String.class)
+    @XmlJavaTypeAdapter(LocalDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar geburtstag;
+    protected LocalDate geburtstag;
     protected Anz2StAEreignisort geburtsort;
     @XmlElement(required = true)
     protected CodeGeschlecht geschlecht;
@@ -148,10 +152,10 @@ public class Portal2StASterbefallVerstorbenerEinrichtung {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getGeburtstag() {
+    public LocalDate getGeburtstag() {
         return geburtstag;
     }
 
@@ -160,10 +164,10 @@ public class Portal2StASterbefallVerstorbenerEinrichtung {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public void setGeburtstag(XMLGregorianCalendar value) {
+    public void setGeburtstag(LocalDate value) {
         this.geburtstag = value;
     }
 

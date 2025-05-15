@@ -7,15 +7,17 @@
 
 package de.domap.xpsw.xpsw2505;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.datatype.XMLGregorianCalendar;
+import com.vertama.xpersonenstand.adapters.LocalDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
@@ -269,9 +271,10 @@ public class Portal2StALP083031
         protected PersonName lebenspartner1;
         @XmlElement(required = true)
         protected PersonName lebenspartner2;
-        @XmlElement(required = true)
+        @XmlElement(required = true, type = String.class)
+        @XmlJavaTypeAdapter(LocalDateAdapter.class)
         @XmlSchemaType(name = "date")
-        protected XMLGregorianCalendar datumBegruendung;
+        protected LocalDate datumBegruendung;
         @XmlElement(required = true)
         protected String ortBegruendung;
         protected String registernummer;
@@ -329,10 +332,10 @@ public class Portal2StALP083031
          * 
          * @return
          *     possible object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link String }
          *     
          */
-        public XMLGregorianCalendar getDatumBegruendung() {
+        public LocalDate getDatumBegruendung() {
             return datumBegruendung;
         }
 
@@ -341,10 +344,10 @@ public class Portal2StALP083031
          * 
          * @param value
          *     allowed object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link String }
          *     
          */
-        public void setDatumBegruendung(XMLGregorianCalendar value) {
+        public void setDatumBegruendung(LocalDate value) {
             this.datumBegruendung = value;
         }
 

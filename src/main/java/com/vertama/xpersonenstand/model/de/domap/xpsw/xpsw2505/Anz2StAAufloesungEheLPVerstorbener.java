@@ -7,11 +7,15 @@
 
 package de.domap.xpsw.xpsw2505;
 
+import java.time.LocalDate;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.vertama.xpersonenstand.adapters.LocalDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
@@ -53,15 +57,19 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class Anz2StAAufloesungEheLPVerstorbener {
 
+    @XmlElement(type = String.class)
+    @XmlJavaTypeAdapter(LocalDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar todestagPartner;
+    protected LocalDate todestagPartner;
     protected Anz2StAEreignisort sterbeortPartner;
     protected Behoerdenbezeichnung sterbeeintragPartnerBehoerde;
     @XmlSchemaType(name = "gYear")
     protected XMLGregorianCalendar erstbeurkundungsjahrTodPartner;
     protected String sterbeeintragNummerPartner;
+    @XmlElement(type = String.class)
+    @XmlJavaTypeAdapter(LocalDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar tagAufloesungGerichtEheLp;
+    protected LocalDate tagAufloesungGerichtEheLp;
     protected Behoerdenbezeichnung aufloesungBehoerde;
 
     /**
@@ -69,10 +77,10 @@ public class Anz2StAAufloesungEheLPVerstorbener {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTodestagPartner() {
+    public LocalDate getTodestagPartner() {
         return todestagPartner;
     }
 
@@ -81,10 +89,10 @@ public class Anz2StAAufloesungEheLPVerstorbener {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public void setTodestagPartner(XMLGregorianCalendar value) {
+    public void setTodestagPartner(LocalDate value) {
         this.todestagPartner = value;
     }
 
@@ -189,10 +197,10 @@ public class Anz2StAAufloesungEheLPVerstorbener {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTagAufloesungGerichtEheLp() {
+    public LocalDate getTagAufloesungGerichtEheLp() {
         return tagAufloesungGerichtEheLp;
     }
 
@@ -201,10 +209,10 @@ public class Anz2StAAufloesungEheLPVerstorbener {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public void setTagAufloesungGerichtEheLp(XMLGregorianCalendar value) {
+    public void setTagAufloesungGerichtEheLp(LocalDate value) {
         this.tagAufloesungGerichtEheLp = value;
     }
 

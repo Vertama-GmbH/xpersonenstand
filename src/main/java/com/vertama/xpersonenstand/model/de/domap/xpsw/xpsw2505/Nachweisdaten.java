@@ -7,11 +7,14 @@
 
 package de.domap.xpsw.xpsw2505;
 
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.LocalDate;
+import com.vertama.xpersonenstand.adapters.LocalDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
@@ -48,8 +51,10 @@ import jakarta.xml.bind.annotation.XmlType;
 public class Nachweisdaten {
 
     protected String rechtsgrundlage;
+    @XmlElement(type = String.class)
+    @XmlJavaTypeAdapter(LocalDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar wirksamkeitsdatum;
+    protected LocalDate wirksamkeitsdatum;
     protected String behoerdenname;
     protected String aktenzeichen;
 
@@ -82,10 +87,10 @@ public class Nachweisdaten {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getWirksamkeitsdatum() {
+    public LocalDate getWirksamkeitsdatum() {
         return wirksamkeitsdatum;
     }
 
@@ -94,10 +99,10 @@ public class Nachweisdaten {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public void setWirksamkeitsdatum(XMLGregorianCalendar value) {
+    public void setWirksamkeitsdatum(LocalDate value) {
         this.wirksamkeitsdatum = value;
     }
 

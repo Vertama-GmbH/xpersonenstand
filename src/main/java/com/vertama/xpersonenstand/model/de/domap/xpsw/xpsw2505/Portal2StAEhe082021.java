@@ -8,15 +8,17 @@
 package de.domap.xpsw.xpsw2505;
 
 import java.math.BigInteger;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.datatype.XMLGregorianCalendar;
+import com.vertama.xpersonenstand.adapters.LocalDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
@@ -69,8 +71,10 @@ public class Portal2StAEhe082021
     protected List<Anm2StAAngabenEheschliessendeAnmeldung> angabenEheschliessende;
     @XmlSchemaType(name = "nonNegativeInteger")
     protected BigInteger anzahlGemeinsamerKinder;
+    @XmlElement(type = String.class)
+    @XmlJavaTypeAdapter(LocalDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected List<XMLGregorianCalendar> wunschtermin;
+    protected List<LocalDate> wunschtermin;
     protected List<String> wunschzeit;
     protected String wunschort;
     protected String wunschraum;
@@ -152,13 +156,13 @@ public class Portal2StAEhe082021
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link XMLGregorianCalendar }
+     * {@link String }
      * 
      * 
      * @return
      *     The value of the wunschtermin property.
      */
-    public List<XMLGregorianCalendar> getWunschtermin() {
+    public List<LocalDate> getWunschtermin() {
         if (wunschtermin == null) {
             wunschtermin = new ArrayList<>();
         }

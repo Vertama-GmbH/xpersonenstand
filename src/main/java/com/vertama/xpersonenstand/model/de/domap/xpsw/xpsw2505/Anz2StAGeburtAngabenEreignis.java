@@ -7,13 +7,15 @@
 
 package de.domap.xpsw.xpsw2505;
 
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.LocalDate;
+import com.vertama.xpersonenstand.adapters.LocalDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlSeeAlso;
 import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
@@ -54,9 +56,10 @@ public class Anz2StAGeburtAngabenEreignis {
 
     @XmlElement(required = true)
     protected Ereignisort ort;
-    @XmlElement(required = true)
+    @XmlElement(required = true, type = String.class)
+    @XmlJavaTypeAdapter(LocalDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar tag;
+    protected LocalDate tag;
 
     /**
      * Gets the value of the ort property.
@@ -87,10 +90,10 @@ public class Anz2StAGeburtAngabenEreignis {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTag() {
+    public LocalDate getTag() {
         return tag;
     }
 
@@ -99,10 +102,10 @@ public class Anz2StAGeburtAngabenEreignis {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public void setTag(XMLGregorianCalendar value) {
+    public void setTag(LocalDate value) {
         this.tag = value;
     }
 

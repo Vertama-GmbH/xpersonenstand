@@ -7,7 +7,8 @@
 
 package de.domap.xpsw.xpsw2505;
 
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.LocalDate;
+import com.vertama.xpersonenstand.adapters.LocalDateAdapter;
 import de.osci.xinneres.geschlecht._1.CodeGeschlecht;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -15,6 +16,7 @@ import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
@@ -103,8 +105,10 @@ public class Portal2StAGeburt081070
     protected Portal2StAGeburt081070 .Elternteil1 elternteil1;
     @XmlElement(required = true)
     protected Portal2StAGeburt081070 .Kind kind;
+    @XmlElement(type = String.class)
+    @XmlJavaTypeAdapter(LocalDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar wunschtermin;
+    protected LocalDate wunschtermin;
 
     /**
      * Gets the value of the elternteil2 property.
@@ -183,10 +187,10 @@ public class Portal2StAGeburt081070
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getWunschtermin() {
+    public LocalDate getWunschtermin() {
         return wunschtermin;
     }
 
@@ -195,10 +199,10 @@ public class Portal2StAGeburt081070
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public void setWunschtermin(XMLGregorianCalendar value) {
+    public void setWunschtermin(LocalDate value) {
         this.wunschtermin = value;
     }
 
@@ -481,8 +485,10 @@ public class Portal2StAGeburt081070
         })
         public static class Geburt {
 
+            @XmlElement(type = String.class)
+            @XmlJavaTypeAdapter(LocalDateAdapter.class)
             @XmlSchemaType(name = "date")
-            protected XMLGregorianCalendar voraussichtlicherGeburtstermin;
+            protected LocalDate voraussichtlicherGeburtstermin;
             protected Portal2StAGeburt081070 .Kind.Geburt.Geburtsangaben geburtsangaben;
 
             /**
@@ -490,10 +496,10 @@ public class Portal2StAGeburt081070
              * 
              * @return
              *     possible object is
-             *     {@link XMLGregorianCalendar }
+             *     {@link String }
              *     
              */
-            public XMLGregorianCalendar getVoraussichtlicherGeburtstermin() {
+            public LocalDate getVoraussichtlicherGeburtstermin() {
                 return voraussichtlicherGeburtstermin;
             }
 
@@ -502,10 +508,10 @@ public class Portal2StAGeburt081070
              * 
              * @param value
              *     allowed object is
-             *     {@link XMLGregorianCalendar }
+             *     {@link String }
              *     
              */
-            public void setVoraussichtlicherGeburtstermin(XMLGregorianCalendar value) {
+            public void setVoraussichtlicherGeburtstermin(LocalDate value) {
                 this.voraussichtlicherGeburtstermin = value;
             }
 

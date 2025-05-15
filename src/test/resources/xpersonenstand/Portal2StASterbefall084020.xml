@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ns2:portal2StA.Sterbefall.084020 xmlns:ns2="http://xpsw.domap.de/xpsw2505">
+<ns2:portal2StA.Sterbefall.084020 xmlns:ns2="http://xpsw.domap.de/xpsw2505" produkt="DIGT" produkthersteller="Vertama GmbH" produktversion="0.1" standard="XPersonenstand" test="test" version="25.05">
     <nachrichtenkopf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:Nachrichtenkopf.G2G">
         <identifikation.nachricht xsi:type="ns2:Identifikation.Nachricht">
             <nachrichtenUUID>FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0</nachrichtenUUID>
@@ -50,7 +50,7 @@
     <ns2:sterbefall>
         <ns2:todestag>
             <ns2:todestag>
-                <ns2:todestag>2024-11-01+00:02</ns2:todestag>
+                <ns2:todestag>2024-11-01</ns2:todestag>
                 <ns2:todeszeit exakt="true">05:21</ns2:todeszeit>
             </ns2:todestag>
         </ns2:todestag>

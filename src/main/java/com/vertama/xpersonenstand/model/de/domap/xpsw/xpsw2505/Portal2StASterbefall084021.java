@@ -8,9 +8,10 @@
 package de.domap.xpsw.xpsw2505;
 
 import java.math.BigInteger;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.datatype.XMLGregorianCalendar;
+import com.vertama.xpersonenstand.adapters.LocalDateAdapter;
 import de.osci.xinneres.kommunikation._5.Kommunikation;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -18,6 +19,7 @@ import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
@@ -1103,8 +1105,10 @@ public class Portal2StASterbefall084021
 
         protected String familienname;
         protected String vornamen;
+        @XmlElement(type = String.class)
+        @XmlJavaTypeAdapter(LocalDateAdapter.class)
         @XmlSchemaType(name = "date")
-        protected XMLGregorianCalendar geburtstag;
+        protected LocalDate geburtstag;
         protected Anz2StAEreignisort geburtsort;
         protected Portal2StARegistereintrag geburtseintrag;
         protected Portal2StAAnschrift anschrift;
@@ -1164,10 +1168,10 @@ public class Portal2StASterbefall084021
          * 
          * @return
          *     possible object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link String }
          *     
          */
-        public XMLGregorianCalendar getGeburtstag() {
+        public LocalDate getGeburtstag() {
             return geburtstag;
         }
 
@@ -1176,10 +1180,10 @@ public class Portal2StASterbefall084021
          * 
          * @param value
          *     allowed object is
-         *     {@link XMLGregorianCalendar }
+         *     {@link String }
          *     
          */
-        public void setGeburtstag(XMLGregorianCalendar value) {
+        public void setGeburtstag(LocalDate value) {
             this.geburtstag = value;
         }
 

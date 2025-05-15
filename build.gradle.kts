@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "com.vertama"
-version = "2.0.0"
+version = "2.0.1"
 
 repositories {
     mavenLocal()
@@ -14,8 +14,8 @@ repositories {
 }
 
 dependencies {
-    api(libs.jakarta.xml.bind.jakarta.xml.bind.api)
-    api(libs.org.glassfish.jaxb.jaxb.runtime)
+    implementation(libs.jakarta.xml.bind.jakarta.xml.bind.api)
+    implementation(libs.org.glassfish.jaxb.jaxb.runtime)
     testImplementation(kotlin("test"))
 }
 
@@ -32,6 +32,7 @@ jaxb {
             schema = file("src/main/resources/xpersonenstand-25.05/xpersonenstand-nachrichten-portale.xsd")
             outputDir = file("src/main/java/com/vertama/xpersonenstand/model")
             binding = file("src/main/resources/xpersonenstand-25.05/binding.xjb")
+            args = listOf("-extension")
         }
     }
 }

@@ -7,15 +7,17 @@
 
 package de.domap.xpsw.xpsw2505;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.datatype.XMLGregorianCalendar;
+import com.vertama.xpersonenstand.adapters.LocalDateAdapter;
 import de.osci.xinneres.kommunikation._5.Kommunikation;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
@@ -61,9 +63,10 @@ public class TodesbescheinigungLeichenschau {
     protected AnschriftInland anschriftArzt;
     @XmlElement(required = true)
     protected List<Kommunikation> kontaktArzt;
-    @XmlElement(required = true)
+    @XmlElement(required = true, type = String.class)
+    @XmlJavaTypeAdapter(LocalDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar datum;
+    protected LocalDate datum;
     @XmlElement(required = true)
     protected Uhrzeit uhrzeit;
     @XmlElement(required = true)
@@ -153,10 +156,10 @@ public class TodesbescheinigungLeichenschau {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDatum() {
+    public LocalDate getDatum() {
         return datum;
     }
 
@@ -165,10 +168,10 @@ public class TodesbescheinigungLeichenschau {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public void setDatum(XMLGregorianCalendar value) {
+    public void setDatum(LocalDate value) {
         this.datum = value;
     }
 

@@ -7,15 +7,17 @@
 
 package de.domap.xpsw.xpsw2505;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.datatype.XMLGregorianCalendar;
+import com.vertama.xpersonenstand.adapters.LocalDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
@@ -61,8 +63,10 @@ public class Portal2StAGeburt081060
     protected Erk2StANeuerEhegatte neuerEhegatte;
     @XmlElement(required = true)
     protected Erk2StAKind kind;
+    @XmlElement(type = String.class)
+    @XmlJavaTypeAdapter(LocalDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar gemeinsameSorgeDatum;
+    protected LocalDate gemeinsameSorgeDatum;
     protected Erk2StAEhename ehenamen;
     @XmlElement(required = true)
     protected Erk2StAErklaerungGeburt erklaerung;
@@ -151,10 +155,10 @@ public class Portal2StAGeburt081060
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getGemeinsameSorgeDatum() {
+    public LocalDate getGemeinsameSorgeDatum() {
         return gemeinsameSorgeDatum;
     }
 
@@ -163,10 +167,10 @@ public class Portal2StAGeburt081060
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public void setGemeinsameSorgeDatum(XMLGregorianCalendar value) {
+    public void setGemeinsameSorgeDatum(LocalDate value) {
         this.gemeinsameSorgeDatum = value;
     }
 

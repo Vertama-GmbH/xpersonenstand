@@ -7,11 +7,15 @@
 
 package de.osci.xinneres.datum._2;
 
+import java.time.LocalDate;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.vertama.xpersonenstand.adapters.LocalDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
@@ -45,8 +49,10 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class TeilbekanntesDatum {
 
+    @XmlElement(type = String.class)
+    @XmlJavaTypeAdapter(LocalDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar jahrMonatTag;
+    protected LocalDate jahrMonatTag;
     @XmlSchemaType(name = "gYearMonth")
     protected XMLGregorianCalendar jahrMonat;
     @XmlSchemaType(name = "gYear")
@@ -57,10 +63,10 @@ public class TeilbekanntesDatum {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getJahrMonatTag() {
+    public LocalDate getJahrMonatTag() {
         return jahrMonatTag;
     }
 
@@ -69,10 +75,10 @@ public class TeilbekanntesDatum {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public void setJahrMonatTag(XMLGregorianCalendar value) {
+    public void setJahrMonatTag(LocalDate value) {
         this.jahrMonatTag = value;
     }
 

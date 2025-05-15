@@ -7,11 +7,15 @@
 
 package de.domap.xpsw.xpsw2505;
 
+import java.time.LocalDate;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.vertama.xpersonenstand.adapters.LocalDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
@@ -49,8 +53,10 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class Anz2StAEheVerstorbener {
 
+    @XmlElement(type = String.class)
+    @XmlJavaTypeAdapter(LocalDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar tagEheLpVerstorbener;
+    protected LocalDate tagEheLpVerstorbener;
     protected Anz2StAEreignisort ortEheLpVerstorbener;
     protected Behoerdenbezeichnung eheLpeintragBehoerde;
     protected String eheLpeintragNummer;
@@ -62,10 +68,10 @@ public class Anz2StAEheVerstorbener {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTagEheLpVerstorbener() {
+    public LocalDate getTagEheLpVerstorbener() {
         return tagEheLpVerstorbener;
     }
 
@@ -74,10 +80,10 @@ public class Anz2StAEheVerstorbener {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public void setTagEheLpVerstorbener(XMLGregorianCalendar value) {
+    public void setTagEheLpVerstorbener(LocalDate value) {
         this.tagEheLpVerstorbener = value;
     }
 

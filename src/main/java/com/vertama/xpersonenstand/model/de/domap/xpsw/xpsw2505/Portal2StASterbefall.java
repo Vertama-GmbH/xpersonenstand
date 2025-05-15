@@ -7,12 +7,14 @@
 
 package de.domap.xpsw.xpsw2505;
 
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.LocalDate;
+import com.vertama.xpersonenstand.adapters.LocalDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
@@ -329,9 +331,10 @@ public class Portal2StASterbefall {
         })
         public static class InnerTodestag {
 
-            @XmlElement(required = true)
+            @XmlElement(required = true, type = String.class)
+            @XmlJavaTypeAdapter(LocalDateAdapter.class)
             @XmlSchemaType(name = "date")
-            protected XMLGregorianCalendar todestag;
+            protected LocalDate todestag;
             @XmlElement(required = true)
             protected UhrzeitPersonenstandswesenMitExakt todeszeit;
 
@@ -340,10 +343,10 @@ public class Portal2StASterbefall {
              * 
              * @return
              *     possible object is
-             *     {@link XMLGregorianCalendar }
+             *     {@link String }
              *     
              */
-            public XMLGregorianCalendar getTodestag() {
+            public LocalDate getTodestag() {
                 return todestag;
             }
 
@@ -352,10 +355,10 @@ public class Portal2StASterbefall {
              * 
              * @param value
              *     allowed object is
-             *     {@link XMLGregorianCalendar }
+             *     {@link String }
              *     
              */
-            public void setTodestag(XMLGregorianCalendar value) {
+            public void setTodestag(LocalDate value) {
                 this.todestag = value;
             }
 
@@ -417,12 +420,15 @@ public class Portal2StASterbefall {
         })
         public static class Sterbezeitraum {
 
+            @XmlElement(type = String.class)
+            @XmlJavaTypeAdapter(LocalDateAdapter.class)
             @XmlSchemaType(name = "date")
-            protected XMLGregorianCalendar letzterTagLebend;
+            protected LocalDate letzterTagLebend;
             protected String letzterTagLebendUhrzeit;
-            @XmlElement(required = true)
+            @XmlElement(required = true, type = String.class)
+            @XmlJavaTypeAdapter(LocalDateAdapter.class)
             @XmlSchemaType(name = "date")
-            protected XMLGregorianCalendar mitSicherheitTotTag;
+            protected LocalDate mitSicherheitTotTag;
             @XmlElement(required = true)
             protected String mitSicherheitTotUhrzeit;
 
@@ -431,10 +437,10 @@ public class Portal2StASterbefall {
              * 
              * @return
              *     possible object is
-             *     {@link XMLGregorianCalendar }
+             *     {@link String }
              *     
              */
-            public XMLGregorianCalendar getLetzterTagLebend() {
+            public LocalDate getLetzterTagLebend() {
                 return letzterTagLebend;
             }
 
@@ -443,10 +449,10 @@ public class Portal2StASterbefall {
              * 
              * @param value
              *     allowed object is
-             *     {@link XMLGregorianCalendar }
+             *     {@link String }
              *     
              */
-            public void setLetzterTagLebend(XMLGregorianCalendar value) {
+            public void setLetzterTagLebend(LocalDate value) {
                 this.letzterTagLebend = value;
             }
 
@@ -479,10 +485,10 @@ public class Portal2StASterbefall {
              * 
              * @return
              *     possible object is
-             *     {@link XMLGregorianCalendar }
+             *     {@link String }
              *     
              */
-            public XMLGregorianCalendar getMitSicherheitTotTag() {
+            public LocalDate getMitSicherheitTotTag() {
                 return mitSicherheitTotTag;
             }
 
@@ -491,10 +497,10 @@ public class Portal2StASterbefall {
              * 
              * @param value
              *     allowed object is
-             *     {@link XMLGregorianCalendar }
+             *     {@link String }
              *     
              */
-            public void setMitSicherheitTotTag(XMLGregorianCalendar value) {
+            public void setMitSicherheitTotTag(LocalDate value) {
                 this.mitSicherheitTotTag = value;
             }
 

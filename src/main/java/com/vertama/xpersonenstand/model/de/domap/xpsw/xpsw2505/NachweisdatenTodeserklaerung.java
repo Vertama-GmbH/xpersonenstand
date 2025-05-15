@@ -7,13 +7,15 @@
 
 package de.domap.xpsw.xpsw2505;
 
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.LocalDate;
+import com.vertama.xpersonenstand.adapters.LocalDateAdapter;
 import de.osci.xinneres.datum._2.TeilbekanntesDatumMitUnbekannt;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
@@ -60,8 +62,10 @@ public class NachweisdatenTodeserklaerung {
     @XmlElement(required = true)
     protected Uhrzeit festgestellteTodeszeit;
     protected Behoerdenbezeichnung nameBehoerde;
+    @XmlElement(type = String.class)
+    @XmlJavaTypeAdapter(LocalDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar beschlussdatum;
+    protected LocalDate beschlussdatum;
     protected CodeBeschlussart beschlussart;
     protected String aktenzeichen;
     protected CodeStaat staat;
@@ -143,10 +147,10 @@ public class NachweisdatenTodeserklaerung {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getBeschlussdatum() {
+    public LocalDate getBeschlussdatum() {
         return beschlussdatum;
     }
 
@@ -155,10 +159,10 @@ public class NachweisdatenTodeserklaerung {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public void setBeschlussdatum(XMLGregorianCalendar value) {
+    public void setBeschlussdatum(LocalDate value) {
         this.beschlussdatum = value;
     }
 

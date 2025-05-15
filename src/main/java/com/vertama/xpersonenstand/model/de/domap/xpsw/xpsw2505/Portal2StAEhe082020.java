@@ -8,15 +8,17 @@
 package de.domap.xpsw.xpsw2505;
 
 import java.math.BigInteger;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.datatype.XMLGregorianCalendar;
+import com.vertama.xpersonenstand.adapters.LocalDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
@@ -59,8 +61,10 @@ public class Portal2StAEhe082020
     protected List<Anm2StAAngabenEheschliessende> angabenEheschliessende;
     @XmlSchemaType(name = "nonNegativeInteger")
     protected BigInteger anzahlGemeinsamerKinder;
+    @XmlElement(type = String.class)
+    @XmlJavaTypeAdapter(LocalDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar wunschtermin;
+    protected LocalDate wunschtermin;
     protected String wunschort;
     protected List<AnhangInhalt> anhang;
 
@@ -124,10 +128,10 @@ public class Portal2StAEhe082020
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getWunschtermin() {
+    public LocalDate getWunschtermin() {
         return wunschtermin;
     }
 
@@ -136,10 +140,10 @@ public class Portal2StAEhe082020
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public void setWunschtermin(XMLGregorianCalendar value) {
+    public void setWunschtermin(LocalDate value) {
         this.wunschtermin = value;
     }
 
