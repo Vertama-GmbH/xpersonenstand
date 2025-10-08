@@ -7,8 +7,9 @@
 
 package de.osci.xinneres.meldeanschrift._5;
 
-import de.domap.xpsw.xpsw2505.AnschriftEingeschraenkt;
-import de.domap.xpsw.xpsw2505.AnschriftInland;
+import de.domap.xpsw.xpsw2511.AnschriftEingeschraenkt;
+import de.domap.xpsw.xpsw2511.AnschriftInland;
+import de.domap.xpsw.xpsw2511.StA2MBAnschriftMeldebehoerde;
 import de.osci.xinneres.codes.gemeindeverzeichnis._3.CodeGemeindeVZAmtlicherGemeindeschluessel;
 import de.osci.xinneres.postanschrift._5.PostalischeInlandsanschriftBasis;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -65,6 +66,7 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlSeeAlso({
     AnschriftInland.class,
     AnschriftEingeschraenkt.class,
+    StA2MBAnschriftMeldebehoerde.class,
     PostalischeInlandsanschriftBasis.class
 })
 public class Meldeanschrift {

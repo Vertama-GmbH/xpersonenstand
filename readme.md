@@ -2,7 +2,7 @@
 
 This Java library simplifies the process of generating XML files conforming to the specifications defined within the "XPersonenstand" standard. By providing Java classes directly derived from the XPersonenstand schema, this library eliminates the need for manual XML construction, reducing errors and streamlining development.
 
-The current supported version of the XPersonenstand standard is 25.05
+The current supported version of the XPersonenstand standard is 25.11
 
 ## Features
 
@@ -20,7 +20,7 @@ Add this dependency to your project's POM file:
 <dependency>
     <groupId>com.vertama</groupId>
     <artifactId>xpersonenstand-library</artifactId>
-    <version>2.0.0</version>
+    <version>3.0.0</version>
 </dependency>
 ```
 
@@ -29,7 +29,7 @@ Add this dependency to your project's POM file:
 Add this to your dependencies:
 
 ```groovy
-implementation "com.vertama:xpersonenstand:2.0.0"
+implementation "com.vertama:xpersonenstand:3.0.0"
 ```
 
 ### Gradle (Kotlin)
@@ -37,7 +37,7 @@ implementation "com.vertama:xpersonenstand:2.0.0"
 Add this to your dependencies:
 
 ```kts
-implementation("com.vertama:xpersonenstand:2.0.0")
+implementation("com.vertama:xpersonenstand:3.0.0")
 ```
 
 ## Usage

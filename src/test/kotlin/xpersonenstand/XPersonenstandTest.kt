@@ -2,13 +2,14 @@ package xpersonenstand
 
 import com.vertama.xpersonenstand.XPersonenstand
 import com.vertama.xpersonenstand.XPersonenstandMarshaller
-import de.domap.xpsw.xpsw2505.*
-import de.osci.xinneres.behoerde._6.*
+import de.domap.xpsw.xpsw2511.*
 import de.osci.xinneres.geschlecht._1.CodeGeschlecht
-import de.osci.xinneres.kommunikation._5.CodeErreichbarkeit
-import de.osci.xinneres.kommunikation._5.Kommunikation
 import de.osci.xinneres.postanschrift._5.PostalischeInlandsanschrift
 import de.osci.xinneres.postanschrift._5.PostalischeInlandsanschriftGebaeudeanschrift
+import de.xoev.schemata.basisnachricht.unqualified.g2g._1_1.BehoerdeType
+import de.xoev.schemata.basisnachricht.unqualified.g2g._1_1.CodeKommunikationKanalType
+import de.xoev.schemata.basisnachricht.unqualified.g2g._1_1.CodeVerzeichnisdienstType
+import de.xoev.schemata.basisnachricht.unqualified.g2g._1_1.KommunikationType
 import de.xoev.schemata.code._1_0.Code
 import org.junit.jupiter.api.assertThrows
 import org.xml.sax.SAXException
@@ -43,10 +44,10 @@ class XPersonenstandTest {
 
     @Test
     fun `validation of valid Portal2StAGeburt081020 throws no error`() {
-        val invalidXml = this::class.java.getResource("/xpersonenstand/Portal2StAGeburt081020.xml")
+        val validXml = this::class.java.getResource("/xpersonenstand/Portal2StAGeburt081020.xml")
             ?: error("XML file of basisnachricht not found in resources.")
 
-        val unmarshalFromFile = XPersonenstandMarshaller.unmarshalFromInputStream(invalidXml.openStream(), Portal2StAGeburt081020::class.java)
+        val unmarshalFromFile = XPersonenstandMarshaller.unmarshalFromInputStream(validXml.openStream(), Portal2StAGeburt081020::class.java)
         XPersonenstand.validateOrThrow(unmarshalFromFile)
     }
 
@@ -91,16 +92,34 @@ class XPersonenstandTest {
             produktversion = "0.1"
             standard = "XPersonenstand"
             test = "test"
-            version = "25.05"
+            version = "25.11"
 
-            nachrichtenkopf = buildNachrichtenKopf(
+            nachrichtenkopfG2G = buildNachrichtenKopf(
                 Code().apply {
                     code = "081020"
                     name = "portal2StA.Geburt.081020"
                     listURI = "urn:xoev-de:xpersonenstand:codelist:nachrichtentyp"
-                    listVersionID = "25.05"
+                    listVersionID = "25.11"
                 }
             )
+
+            anschriftLeser = PostalischeInlandsanschrift().apply {
+                gebaeude = PostalischeInlandsanschriftGebaeudeanschrift().apply {
+                    hausnummer = "1"
+                    postleitzahl = "10117"
+                    strasse = "LeserStrasse"
+                    wohnort = "LeserWohnort"
+                }
+            }
+            anschriftAutor = PostalischeInlandsanschrift().apply {
+                gebaeude = PostalischeInlandsanschriftGebaeudeanschrift().apply {
+                    hausnummer = "1"
+                    postleitzahl = "10117"
+                    strasse = "AutorStrasse"
+                    wohnort = "AutorWohnort"
+                }
+            }
+
             nameEinrichtung = "NameEinrichtung"
             geburtsangaben = Anz2StATemplateGeburtsanzeige.Geburtsangaben().apply {
                 ort = Ereignisort().apply {
@@ -148,16 +167,34 @@ class XPersonenstandTest {
             produktversion = "0.1"
             standard = "XPersonenstand"
             test = "test"
-            version = "25.05"
+            version = "25.11"
 
-            nachrichtenkopf = buildNachrichtenKopf(
+            nachrichtenkopfG2G = buildNachrichtenKopf(
                 Code().apply {
                     code = "084020"
                     name = "portal2StA.Sterbefall.084020"
                     listURI = "urn:xoev-de:xpersonenstand:codelist:nachrichtentyp"
-                    listVersionID = "25.05"
+                    listVersionID = "25.11"
                 }
             )
+
+            anschriftLeser = PostalischeInlandsanschrift().apply {
+                gebaeude = PostalischeInlandsanschriftGebaeudeanschrift().apply {
+                    hausnummer = "1"
+                    postleitzahl = "10117"
+                    strasse = "LeserStrasse"
+                    wohnort = "LeserWohnort"
+                }
+            }
+            anschriftAutor = PostalischeInlandsanschrift().apply {
+                gebaeude = PostalischeInlandsanschriftGebaeudeanschrift().apply {
+                    hausnummer = "1"
+                    postleitzahl = "10117"
+                    strasse = "AutorStrasse"
+                    wohnort = "AutorWohnort"
+                }
+            }
+
             ansprechpartner = "Ansprechpartner"
             sterbefall = Portal2StASterbefall().apply {
                 todestag = Portal2StASterbefall.Todestag().apply {
@@ -188,8 +225,8 @@ class XPersonenstandTest {
                 namen = Portal2StASterbefall084020.Anzeigender.Namen().apply {
                     nameOrganisation = "Organisationsname"
                 }
-                kontaktdaten.add(Kommunikation().apply {
-                    kanal = CodeErreichbarkeit().apply {
+                kontaktdaten.add(KommunikationType().apply{
+                    kanal = CodeKommunikationKanalType().apply{
                         listURI = "urn:de:xoev:codeliste:erreichbarkeit"
                         listVersionID = "1"
                         code = "03"
@@ -210,51 +247,31 @@ class XPersonenstandTest {
                         .newXMLGregorianCalendar(2024, 11, 1, 10, 0, 0, 0, 2)
             }
 
-            leser = Behoerde().apply {
-                behoerdenkennung = Behoerdenkennung().apply {
-                    praefix = CodePraefix().apply {
-                        listURI = "urn:xoev-de:bund:bmi:bit:codeliste:dvdv.praefix"
-                        listVersionID = "37"
-                        code = "psw"
-                    }
-                    kennung = CodeBehoerdenkennung().apply {
-                        listURI = "urn:de:bund:destatis:bevoelkerungsstatistik:schluessel:standesamtsnummern"
-                        listVersionID = "2023-01-05"
-                        code = "11007007"
-                    }
+            leser = BehoerdeType().apply {
+                verzeichnisdienst = CodeVerzeichnisdienstType().apply {
+                    listURI = "urn:xoev-de:kosit:codeliste:verzeichnisdienst"
+                    listVersionID = "3"
+                    code = "DVDV"
                 }
-                behoerdenname = "Test Standesamt"
+                kennung = "psw:11007007"
+                name = "Test Standesamt"
             }
-            autor = BehoerdeErreichbar().apply {
-                behoerdenkennung = Behoerdenkennung().apply {
-                    praefix = CodePraefix().apply {
-                        listURI = "urn:xoev-de:bund:bmi:bit:codeliste:dvdv.praefix"
-                        listVersionID = "37"
-                        code = "sap"
-                    }
-                    kennung = CodeBehoerdenkennung().apply {
-                        listURI = "urn:de:xibehoerde:test:einrichtungen"
-                        listVersionID = "1.7.8"
-                        code = "000000013"
-                    }
+            autor = BehoerdeType().apply {
+                verzeichnisdienst = CodeVerzeichnisdienstType().apply {
+                    listURI = "urn:xoev-de:kosit:codeliste:verzeichnisdienst"
+                    listVersionID = "3"
+                    code = "DVDV"
                 }
-                erreichbarkeit.add(Kommunikation().apply {
-                    kanal = CodeErreichbarkeit().apply {
+                kennung = "sap:000000013"
+                name = "Test Standesamtportal"
+                erreichbarkeit.add(KommunikationType().apply {
+                    kanal = CodeKommunikationKanalType().apply {
                         listURI = "urn:de:xoev:codeliste:erreichbarkeit"
                         listVersionID = "1"
                         code = "03"
                     }
                     kennung = "555-0100"
                 })
-                anschrift = PostalischeInlandsanschrift().apply {
-                    gebaeude = PostalischeInlandsanschriftGebaeudeanschrift().apply {
-                        hausnummer = "1"
-                        postleitzahl = "10117"
-                        strasse = "AutorStrasse"
-                        wohnort = "AutorWohnort"
-                    }
-                }
-                behoerdenname = "Test Autor Name"
             }
         }
     }

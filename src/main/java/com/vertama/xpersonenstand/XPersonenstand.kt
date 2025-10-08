@@ -1,6 +1,6 @@
 package com.vertama.xpersonenstand
 
-import de.domap.xpsw.xpsw2505.NachrichtG2G
+import de.domap.xpsw.xpsw2511.NachrichtG2G
 import jakarta.xml.bind.JAXBContext
 import jakarta.xml.bind.util.JAXBSource
 import org.xml.sax.SAXException
@@ -25,7 +25,7 @@ object XPersonenstand {
         val sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI)
 
         val schema = sf.newSchema(
-            this::class.java.getResource("/xpersonenstand-25.05/xpersonenstand-nachrichten-portale.xsd")
+            this::class.java.getResource("/xpersonenstand-25.11/xinneres.xpersonenstand.xsd")
         )
         val validator = schema.newValidator()
         validator.validate(JAXBSource(context, obj))

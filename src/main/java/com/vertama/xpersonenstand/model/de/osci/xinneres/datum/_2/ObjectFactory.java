@@ -36,6 +36,16 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link TeilbekanntesDatumMitUnbekannt }
+     * 
+     * @return
+     *     the new instance of {@link TeilbekanntesDatumMitUnbekannt }
+     */
+    public TeilbekanntesDatumMitUnbekannt createTeilbekanntesDatumMitUnbekannt() {
+        return new TeilbekanntesDatumMitUnbekannt();
+    }
+
+    /**
      * Create an instance of {@link TagesdatumMitUnbekannt }
      * 
      * @return
@@ -53,16 +63,6 @@ public class ObjectFactory {
      */
     public TeilbekanntesDatum createTeilbekanntesDatum() {
         return new TeilbekanntesDatum();
-    }
-
-    /**
-     * Create an instance of {@link TeilbekanntesDatumMitUnbekannt }
-     * 
-     * @return
-     *     the new instance of {@link TeilbekanntesDatumMitUnbekannt }
-     */
-    public TeilbekanntesDatumMitUnbekannt createTeilbekanntesDatumMitUnbekannt() {
-        return new TeilbekanntesDatumMitUnbekannt();
     }
 
 }

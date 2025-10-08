@@ -1,6 +1,6 @@
 package com.vertama.xpersonenstand
 
-import de.domap.xpsw.xpsw2505.NachrichtG2G
+import de.domap.xpsw.xpsw2511.NachrichtG2G
 import jakarta.xml.bind.JAXB
 import jakarta.xml.bind.JAXBException
 import jakarta.xml.bind.MarshalException

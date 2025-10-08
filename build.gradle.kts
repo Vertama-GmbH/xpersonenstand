@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "com.vertama"
-version = "2.0.1"
+version = "3.0.0"
 
 repositories {
     mavenLocal()
@@ -29,9 +29,9 @@ kotlin {
 jaxb {
     javaGen {
         register("xpersonenstand") {
-            schema = file("src/main/resources/xpersonenstand-25.05/xpersonenstand-nachrichten-portale.xsd")
+            schema = file("src/main/resources/xpersonenstand-25.11/xinneres.xpersonenstand.xsd")
             outputDir = file("src/main/java/com/vertama/xpersonenstand/model")
-            binding = file("src/main/resources/xpersonenstand-25.05/binding.xjb")
+            binding = file("src/main/resources/xpersonenstand-25.11/binding.xjb")
             args = listOf("-extension")
         }
     }
@@ -59,7 +59,7 @@ jreleaser {
     deploy {
         maven {
             mavenCentral {
-                create("xpersonenstand") {
+                create("sonatype") {
                     active = org.jreleaser.model.Active.ALWAYS
                     url = "https://central.sonatype.com/api/v1/publisher"
 //                    username = System.getenv("JRELEASER_MAVENCENTRAL_USERNAME")
