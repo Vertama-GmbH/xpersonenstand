@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  OASIS XML Catalog (v1.1) for XPersonenstand schema resolution.
+
+  This file is Vertama-authored. It maps every external schema URL transitively
+  imported by the bundled XSDs to its local vendored copy under schemas/.
+  Used by:
+    - xjc at build time (codegen)
+    - SchemaFactory at runtime (validation)
+
+  Layout convention:
+    schemas/                — VENDORED, byte-identical mirror of upstream URLs.
+                              Never hand-edit; re-fetch and diff to verify.
+    catalog.xml             — OURS, hand-maintained, this file.
+    binding.xjb             — OURS, JAXB codegen customization.
+
+  Adding a new external XSD:
+    1. Fetch it under schemas/<host>/<full-url-path>/<filename>.xsd
+    2. Add a matching <uri> entry below.
+    3. Run the build-time guard test (see xpersonenstand test suite) — it walks
+       every xs:import in every bundled XSD and fails loudly if any URL is not
+       mapped here.
+-->
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="public">
+
+  <!-- xoev.de / KOSIT-XÖV -->
+  <uri name="https://xoev.de/schemata/din/91379/2022-08/din-norm-91379-datatypes.xsd"
+       uri="schemas/xoev.de/schemata/din/91379/2022-08/din-norm-91379-datatypes.xsd"/>
+  <uri name="http://xoev.de/schemata/code/1_0/xoev-code.xsd"
+       uri="schemas/xoev.de/schemata/code/1_0/xoev-code.xsd"/>
+  <uri name="http://xoev.de/schemata/basisnachricht/unqualified/g2g/1_1/xoev-basisnachricht-unqualified-g2g_1.1.xsd"
+       uri="schemas/xoev.de/schemata/basisnachricht/unqualified/g2g/1_1/xoev-basisnachricht-unqualified-g2g_1.1.xsd"/>
+
+  <!-- www.osci.de / xinneres -->
+  <uri name="http://www.osci.de/xinneres/allgemeinername/4/xinneres-name.xsd"
+       uri="schemas/www.osci.de/xinneres/allgemeinername/4/xinneres-name.xsd"/>
+  <uri name="http://www.osci.de/xinneres/auslandsanschrift/5/xinneres-auslandsanschrift.xsd"
+       uri="schemas/www.osci.de/xinneres/auslandsanschrift/5/xinneres-auslandsanschrift.xsd"/>
+  <uri name="http://www.osci.de/xinneres/basisnachricht/7/xinneres-basisnachricht.xsd"
+       uri="schemas/www.osci.de/xinneres/basisnachricht/7/xinneres-basisnachricht.xsd"/>
+  <uri name="http://www.osci.de/xinneres/behoerde/7/xinneres-behoerde.xsd"
+       uri="schemas/www.osci.de/xinneres/behoerde/7/xinneres-behoerde.xsd"/>
+  <uri name="http://www.osci.de/xinneres/codes/gemeindeverzeichnis/3/xinneres-codes-gemeindeverzeichnis.xsd"
+       uri="schemas/www.osci.de/xinneres/codes/gemeindeverzeichnis/3/xinneres-codes-gemeindeverzeichnis.xsd"/>
+  <uri name="http://www.osci.de/xinneres/datum/2/xinneres-datum.xsd"
+       uri="schemas/www.osci.de/xinneres/datum/2/xinneres-datum.xsd"/>
+  <uri name="http://www.osci.de/xinneres/geschlecht/1/xinneres-geschlecht.xsd"
+       uri="schemas/www.osci.de/xinneres/geschlecht/1/xinneres-geschlecht.xsd"/>
+  <uri name="http://www.osci.de/xinneres/idnr/2/xinneres-idnr.xsd"
+       uri="schemas/www.osci.de/xinneres/idnr/2/xinneres-idnr.xsd"/>
+  <uri name="http://www.osci.de/xinneres/meldeanschrift/5/xinneres-meldeanschrift.xsd"
+       uri="schemas/www.osci.de/xinneres/meldeanschrift/5/xinneres-meldeanschrift.xsd"/>
+  <uri name="http://www.osci.de/xinneres/nachrichtentypen/7/xinneres-nachrichtentypen.xsd"
+       uri="schemas/www.osci.de/xinneres/nachrichtentypen/7/xinneres-nachrichtentypen.xsd"/>
+  <uri name="http://www.osci.de/xinneres/postanschrift/5/xinneres-postanschrift.xsd"
+       uri="schemas/www.osci.de/xinneres/postanschrift/5/xinneres-postanschrift.xsd"/>
+  <uri name="http://www.osci.de/xinneres/rueckweisung/6/xinneres-rueckweisung.xsd"
+       uri="schemas/www.osci.de/xinneres/rueckweisung/6/xinneres-rueckweisung.xsd"/>
+
+</catalog>
