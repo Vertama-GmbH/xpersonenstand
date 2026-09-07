@@ -20,10 +20,10 @@
             <beschreibung>Im Auftrag des AK I hat die PG Standard bisher unter anderem die fachlichen Vorgaben und die Struktur der Meldeanschrift für die Bereiche Ausländer-, Melde- und Personenstandswesen harmonisiert. Der vorliegende Standard XInneres bildet auf technischer Ebene eine Klammer vor den Standards der Innenverwaltung. An dieser Stelle können gemeinsam genutzte Komponenten definiert werden. In der ersten Version von XInneres definiert der Standard die Datentypen für die Darstellung der Meldeanschrift.</beschreibung>
          </standard>
          <versionStandard>
-            <version>25.11</version>
+            <version>26.11</version>
             <versionXOEVProfil>3.0.3</versionXOEVProfil>
             <versionXOEVHandbuch>3.0.2</versionXOEVHandbuch>
-            <versionXGenerator>3.1.1</versionXGenerator>
+            <versionXGenerator>3.2.4</versionXGenerator>
             <versionModellierungswerkzeug>19.0 SP4</versionModellierungswerkzeug>
             <nameModellierungswerkzeug>MagicDraw</nameModellierungswerkzeug>
          </versionStandard>

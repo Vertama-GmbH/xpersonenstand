@@ -7,9 +7,9 @@
 
 package de.osci.xinneres.meldeanschrift._5;
 
-import de.domap.xpsw.xpsw2511.AnschriftEingeschraenkt;
-import de.domap.xpsw.xpsw2511.AnschriftInland;
-import de.domap.xpsw.xpsw2511.StA2MBAnschriftMeldebehoerde;
+import de.domap.xpsw.xpsw2611.AnschriftEingeschraenkt;
+import de.domap.xpsw.xpsw2611.AnschriftInland;
+import de.domap.xpsw.xpsw2611.StA2MBAnschriftMeldebehoerde;
 import de.osci.xinneres.codes.gemeindeverzeichnis._3.CodeGemeindeVZAmtlicherGemeindeschluessel;
 import de.osci.xinneres.postanschrift._5.PostalischeInlandsanschriftBasis;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -19,7 +19,7 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * Dieser Datentyp repräsentiert die gemeinsamen fachlichen Vorgaben der drei Standardisierungsbereiche Meldewesen, Ausländerwesen und Personenstandswesen für eine inländische Meldeanschrift auf der Grundlage des DSMeld. Hinweis zu Hausnummernbereichen: Der DSMeld kennt keine Hausnummernbereiche. In diesen Fällen ist nur das erste Element des Hausnummernbereichs im Feld hausnummer einzutragen. Das zweite Element des Hausnummernbereichs kann in diesem Datentyp nicht übermittelt werden.
+ * Dieser Datentyp repräsentiert die gemeinsamen fachlichen Vorgaben der vier Standardisierungsbereiche Meldewesen, Ausländerwesen, Personenstandswesen und Pass- und Ausweiswesen für eine inländische Meldeanschrift auf der Grundlage des DSMeld. Hinweis zu Hausnummernbereichen: Der DSMeld kennt keine Hausnummernbereiche. In diesen Fällen ist nur das erste Element des Hausnummernbereichs im Feld hausnummer einzutragen. Das zweite Element des Hausnummernbereichs kann in diesem Datentyp nicht übermittelt werden.
  * 
  * <p>Java class for Meldeanschrift complex type.
  * 

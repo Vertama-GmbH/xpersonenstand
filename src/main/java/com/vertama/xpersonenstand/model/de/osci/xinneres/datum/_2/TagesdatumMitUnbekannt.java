@@ -8,7 +8,7 @@
 package de.osci.xinneres.datum._2;
 
 import java.time.LocalDate;
-import com.vertama.xpersonenstand.adapters.LocalDateAdapter;
+import com.vertama.xpersonenstand._2611.adapters.LocalDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;

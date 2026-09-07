@@ -45,7 +45,7 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 @XmlSeeAlso({
     NachrichtG2GRueckweisung.class,
-    de.domap.xpsw.xpsw2511.NachrichtG2G.class
+    de.domap.xpsw.xpsw2611.NachrichtG2G.class
 })
 public class NachrichtG2G
     extends NachrichtG2GGrundstruktur

@@ -24,6 +24,8 @@
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="public">
 
   <!-- xoev.de / KOSIT-XÖV -->
+  <uri name="http://xoev.de/DIN-SPEC-91379/2019-03/datatypes/din-91379-datatypes.xsd"
+       uri="schemas/xoev.de/DIN-SPEC-91379/2019-03/datatypes/din-91379-datatypes.xsd"/>
   <uri name="https://xoev.de/schemata/din/91379/2022-08/din-norm-91379-datatypes.xsd"
        uri="schemas/xoev.de/schemata/din/91379/2022-08/din-norm-91379-datatypes.xsd"/>
   <uri name="http://xoev.de/schemata/code/1_0/xoev-code.xsd"

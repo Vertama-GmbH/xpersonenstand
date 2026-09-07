@@ -13,7 +13,7 @@
        be the name of a static nested class inside of class 'Todestag' (WAT). Just rename the type
        to 'InnerTodestag' -->
   <!-- XPath patterns developed with the help of http://xpather.com -->
-  <jaxb:bindings schemaLocation="schemas/xpsw.domap.de/xpsw2511/xpersonenstand-nachrichten-portale.xsd" node="/xs:schema">
+  <jaxb:bindings schemaLocation="schemas/xpsw.domap.de/xpsw2611/xpersonenstand-nachrichten-portale.xsd" node="/xs:schema">
     <!-- These bindings must match exactly one element in the schema. Class name remapping can
          (only) be done on 'xs:simpleType' and 'xs:complexType' elements. -->
     <jaxb:bindings
@@ -36,7 +36,7 @@
   <!-- properties with the type Tagesdatum have to be without timezone and therefore should use LocalDate instead of the
        default XMLGregorianCalendar -->
   <jaxb:bindings schemaLocation="http://www.osci.de/xinneres/datum/2/xinneres-datum.xsd" node="//xs:simpleType[@name='Tagesdatum']">
-    <xjc:javaType name="java.time.LocalDate" adapter="com.vertama.xpersonenstand.adapters.LocalDateAdapter"/>
+    <xjc:javaType name="java.time.LocalDate" adapter="com.vertama.xpersonenstand._2611.adapters.LocalDateAdapter"/>
   </jaxb:bindings>
 
 </jaxb:bindings>

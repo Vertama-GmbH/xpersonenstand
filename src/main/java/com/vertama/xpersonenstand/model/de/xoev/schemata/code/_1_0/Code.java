@@ -7,38 +7,38 @@
 
 package de.xoev.schemata.code._1_0;
 
-import de.domap.xpsw.xpsw2511.CodeAGSCode;
-import de.domap.xpsw.xpsw2511.CodeArtErklaerungEheCode;
-import de.domap.xpsw.xpsw2511.CodeArtNameWiederannahmeCode;
-import de.domap.xpsw.xpsw2511.CodeAufenthaltsrechtCode;
-import de.domap.xpsw.xpsw2511.CodeAufenthaltsstatusCode;
-import de.domap.xpsw.xpsw2511.CodeAusweisartCode;
-import de.domap.xpsw.xpsw2511.CodeBeendigungsgrundFamilienstandCode;
-import de.domap.xpsw.xpsw2511.CodeBeschlussartCode;
-import de.domap.xpsw.xpsw2511.CodeBestattungsartCode;
-import de.domap.xpsw.xpsw2511.CodeFamilienrechtlicheBezeichnungEheregisterCode;
-import de.domap.xpsw.xpsw2511.CodeFamilienrechtlicheBezeichnungGeburtenregisterCode;
-import de.domap.xpsw.xpsw2511.CodeFamilienrechtlicheBezeichnungLPregisterCode;
-import de.domap.xpsw.xpsw2511.CodeFamilienstandMeldewesenCode;
-import de.domap.xpsw.xpsw2511.CodeFamilienstandPersonenstandswesenCode;
-import de.domap.xpsw.xpsw2511.CodeFehlerartCode;
-import de.domap.xpsw.xpsw2511.CodeFehlerartEGSCode;
-import de.domap.xpsw.xpsw2511.CodeIdentifizierungsartCode;
-import de.domap.xpsw.xpsw2511.CodeNamensartCode;
-import de.domap.xpsw.xpsw2511.CodeNamensfuehrungCode;
-import de.domap.xpsw.xpsw2511.CodePersonenstandsrechtlicherTatbestandCode;
-import de.domap.xpsw.xpsw2511.CodeRechtsgrundlageCode;
-import de.domap.xpsw.xpsw2511.CodeRegisterart;
-import de.domap.xpsw.xpsw2511.CodeSpracheUebersetzungshilfeCode;
-import de.domap.xpsw.xpsw2511.CodeStaatCode;
-import de.domap.xpsw.xpsw2511.CodeStaatsangehoerigkeitCode;
-import de.domap.xpsw.xpsw2511.CodeStandesamtsnummerCode;
-import de.domap.xpsw.xpsw2511.CodeVerwendungszweckEheurkundeCode;
-import de.domap.xpsw.xpsw2511.CodeVerwendungszweckGeburtsurkundeCode;
-import de.domap.xpsw.xpsw2511.CodeVerwendungszweckLPurkundeCode;
-import de.domap.xpsw.xpsw2511.CodeVerwendungszweckSterbeurkundeCode;
-import de.domap.xpsw.xpsw2511.CodeWahlEhenameCode;
-import de.domap.xpsw.xpsw2511.CodeWahlLPNameCode;
+import de.domap.xpsw.xpsw2611.CodeAGSCode;
+import de.domap.xpsw.xpsw2611.CodeArtErklaerungEheCode;
+import de.domap.xpsw.xpsw2611.CodeArtNameWiederannahmeCode;
+import de.domap.xpsw.xpsw2611.CodeAufenthaltsrechtCode;
+import de.domap.xpsw.xpsw2611.CodeAufenthaltsstatusCode;
+import de.domap.xpsw.xpsw2611.CodeAusweisartCode;
+import de.domap.xpsw.xpsw2611.CodeBeendigungsgrundFamilienstandCode;
+import de.domap.xpsw.xpsw2611.CodeBeschlussartCode;
+import de.domap.xpsw.xpsw2611.CodeBestattungsartCode;
+import de.domap.xpsw.xpsw2611.CodeFamilienrechtlicheBezeichnungEheregisterCode;
+import de.domap.xpsw.xpsw2611.CodeFamilienrechtlicheBezeichnungGeburtenregisterCode;
+import de.domap.xpsw.xpsw2611.CodeFamilienrechtlicheBezeichnungLPregisterCode;
+import de.domap.xpsw.xpsw2611.CodeFamilienstandMeldewesenCode;
+import de.domap.xpsw.xpsw2611.CodeFamilienstandPersonenstandswesenCode;
+import de.domap.xpsw.xpsw2611.CodeFehlerartCode;
+import de.domap.xpsw.xpsw2611.CodeFehlerartEGSCode;
+import de.domap.xpsw.xpsw2611.CodeIdentifizierungsartCode;
+import de.domap.xpsw.xpsw2611.CodeNamensartCode;
+import de.domap.xpsw.xpsw2611.CodeNamensfuehrungCode;
+import de.domap.xpsw.xpsw2611.CodePersonenstandsrechtlicherTatbestandCode;
+import de.domap.xpsw.xpsw2611.CodeRechtsgrundlageCode;
+import de.domap.xpsw.xpsw2611.CodeRegisterart;
+import de.domap.xpsw.xpsw2611.CodeSpracheUebersetzungshilfeCode;
+import de.domap.xpsw.xpsw2611.CodeStaatCode;
+import de.domap.xpsw.xpsw2611.CodeStaatsangehoerigkeitCode;
+import de.domap.xpsw.xpsw2611.CodeStandesamtsnummerCode;
+import de.domap.xpsw.xpsw2611.CodeVerwendungszweckEheurkundeCode;
+import de.domap.xpsw.xpsw2611.CodeVerwendungszweckGeburtsurkundeCode;
+import de.domap.xpsw.xpsw2611.CodeVerwendungszweckLPurkundeCode;
+import de.domap.xpsw.xpsw2611.CodeVerwendungszweckSterbeurkundeCode;
+import de.domap.xpsw.xpsw2611.CodeWahlEhenameCode;
+import de.domap.xpsw.xpsw2611.CodeWahlLPNameCode;
 import de.osci.xinneres.auslandsanschrift._5.CodeZielstaat;
 import de.osci.xinneres.basisnachricht._7.CodeNachrichtentypTyp4;
 import de.osci.xinneres.codes.gemeindeverzeichnis._3.CodeGemeindeVZAmtlicherGemeindeschluessel;
@@ -111,7 +111,7 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     CodeFamilienstandMeldewesenCode.class,
     CodeFamilienstandPersonenstandswesenCode.class,
     CodeIdentifizierungsartCode.class,
-    de.domap.xpsw.xpsw2511.CodeNachrichtentyp.class,
+    de.domap.xpsw.xpsw2611.CodeNachrichtentyp.class,
     CodeNamensartCode.class,
     CodeNamensfuehrungCode.class,
     CodePersonenstandsrechtlicherTatbestandCode.class,

@@ -41,7 +41,7 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Nachrichtenkopf.G2G")
 @XmlSeeAlso({
-    de.domap.xpsw.xpsw2511.NachrichtenkopfG2G.class,
+    de.domap.xpsw.xpsw2611.NachrichtenkopfG2G.class,
     NachrichtenkopfG2GXInneres.class
 })
 public class NachrichtenkopfG2G

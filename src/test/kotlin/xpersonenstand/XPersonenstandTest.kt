@@ -1,8 +1,8 @@
 package xpersonenstand
 
-import com.vertama.xpersonenstand.XPersonenstand
-import com.vertama.xpersonenstand.XPersonenstandMarshaller
-import de.domap.xpsw.xpsw2511.*
+import com.vertama.xpersonenstand._2611.XPersonenstand.validateOrThrow
+import com.vertama.xpersonenstand._2611.XPersonenstandMarshaller
+import de.domap.xpsw.xpsw2611.*
 import de.osci.xinneres.geschlecht._1.CodeGeschlecht
 import de.osci.xinneres.postanschrift._5.PostalischeInlandsanschrift
 import de.osci.xinneres.postanschrift._5.PostalischeInlandsanschriftGebaeudeanschrift
@@ -28,7 +28,7 @@ class XPersonenstandTest {
 
         val unmarshalFromFile = XPersonenstandMarshaller.unmarshalFromInputStream(invalidXml.openStream(), Portal2StAGeburt081020::class.java)
         assertThrows<SAXException> {
-            XPersonenstand.validateOrThrow(unmarshalFromFile)
+            validateOrThrow(unmarshalFromFile)
         }
     }
 
@@ -38,7 +38,7 @@ class XPersonenstandTest {
         xps.produkt = null
 
         assertThrows<SAXException> {
-            XPersonenstand.validateOrThrow(xps)
+            validateOrThrow(xps)
         }
     }
 
@@ -48,7 +48,7 @@ class XPersonenstandTest {
             ?: error("XML file of basisnachricht not found in resources.")
 
         val unmarshalFromFile = XPersonenstandMarshaller.unmarshalFromInputStream(validXml.openStream(), Portal2StAGeburt081020::class.java)
-        XPersonenstand.validateOrThrow(unmarshalFromFile)
+        validateOrThrow(unmarshalFromFile)
     }
 
     @Test
@@ -57,7 +57,7 @@ class XPersonenstandTest {
             ?: error("Expected XML file of basisnachricht not found in resources.")
 
         val portal2StAGeburt081020 = buildPortal2StAGeburt081020()
-        XPersonenstand.validateOrThrow(portal2StAGeburt081020)
+        validateOrThrow(portal2StAGeburt081020)
         val outputStream = ByteArrayOutputStream()
         XPersonenstandMarshaller.marshalToOutputStream(portal2StAGeburt081020, outputStream)
 
@@ -74,7 +74,7 @@ class XPersonenstandTest {
             ?: error("Expected XML file of basisnachricht not found in resources.")
 
         val portal2StASterbefall084020 = buildPortal2StASterbefall084020()
-        XPersonenstand.validateOrThrow(portal2StASterbefall084020)
+        validateOrThrow(portal2StASterbefall084020)
         val outputStream = ByteArrayOutputStream()
         XPersonenstandMarshaller.marshalToOutputStream(portal2StASterbefall084020, outputStream)
 
@@ -92,14 +92,14 @@ class XPersonenstandTest {
             produktversion = "0.1"
             standard = "XPersonenstand"
             test = "test"
-            version = "25.11"
+            version = "26.11"
 
             nachrichtenkopfG2G = buildNachrichtenKopf(
                 Code().apply {
                     code = "081020"
                     name = "portal2StA.Geburt.081020"
                     listURI = "urn:xoev-de:xpersonenstand:codelist:nachrichtentyp"
-                    listVersionID = "25.11"
+                    listVersionID = "26.11"
                 }
             )
 
@@ -167,14 +167,14 @@ class XPersonenstandTest {
             produktversion = "0.1"
             standard = "XPersonenstand"
             test = "test"
-            version = "25.11"
+            version = "26.11"
 
             nachrichtenkopfG2G = buildNachrichtenKopf(
                 Code().apply {
                     code = "084020"
                     name = "portal2StA.Sterbefall.084020"
                     listURI = "urn:xoev-de:xpersonenstand:codelist:nachrichtentyp"
-                    listVersionID = "25.11"
+                    listVersionID = "26.11"
                 }
             )
 

@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xpersonenstand="http://xpsw.domap.de/xpsw2611"
+           xmlns:din91379="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08"
+           xmlns:dinspec91379="urn:xoev-de:kosit:xoev:datentyp:din-spec-91379_2019-03"
+           xmlns:xida="http://www.osci.de/xinneres/datum/2"
+           xmlns:xig="http://www.osci.de/xinneres/geschlecht/1"
+           targetNamespace="http://xpsw.domap.de/xpsw2611"
+           version="26.11"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+   <xs:annotation>
+      <xs:appinfo>
+         <standard>
+            <nameLang>XPersonenstand</nameLang>
+            <nameKurz>XPersonenstand</nameKurz>
+            <nameTechnisch>xinneres.xpersonenstand</nameTechnisch>
+            <kennung>urn:xoev-de:kosit:standard:xinneres.xpersonenstand</kennung>
+            <beschreibung>Projektziel ist die elektronische Kommunikation der Standesämter untereinander und mit anderen Behörden und Institutionen, welche Daten von den Standesämtern erhalten oder an Standesämter senden. Der Nutzen des Projektes besteht in der Kostenreduktion und einer Verbesserung der Qualität der Personenstandsdaten sowie einer Verbesserung der Interoperabilität in der Kommunikation der Standesämter untereinander und zu weiteren Kommunikationspartnern.
+</beschreibung>
+         </standard>
+         <versionStandard>
+            <version>26.11</version>
+            <versionXOEVProfil>3.0.3</versionXOEVProfil>
+            <versionXOEVHandbuch>2.4</versionXOEVHandbuch>
+            <versionXGenerator>3.0.1</versionXGenerator>
+            <versionModellierungswerkzeug>19.0 SP4</versionModellierungswerkzeug>
+            <nameModellierungswerkzeug>MagicDraw</nameModellierungswerkzeug>
+         </versionStandard>
+      </xs:appinfo>
+   </xs:annotation>
+   <xs:include schemaLocation="xpersonenstand-baukasten.xsd"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/datum/2/xinneres-datum.xsd"
+              namespace="http://www.osci.de/xinneres/datum/2"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/geschlecht/1/xinneres-geschlecht.xsd"
+              namespace="http://www.osci.de/xinneres/geschlecht/1"/>
+   <xs:import schemaLocation="http://xoev.de/DIN-SPEC-91379/2019-03/datatypes/din-91379-datatypes.xsd"
+              namespace="urn:xoev-de:kosit:xoev:datentyp:din-spec-91379_2019-03"/>
+   <xs:import schemaLocation="https://xoev.de/schemata/din/91379/2022-08/din-norm-91379-datatypes.xsd"
+              namespace="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08"/>
+   <xs:complexType name="StA2JA.Kind">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Kind</title>
+         </xs:appinfo>
+         <xs:documentation>In diesem Datentypen werden Angaben zum Kind abgebildet, die dem Jugendamt zur Verfügung gestellt werden.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="namen" type="xpersonenstand:PersonName">
+            <xs:annotation>
+               <xs:documentation>Hier werden die Namen des Kindes mitgeteilt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="namensfuehrungNichtNachgewiesen"
+                     minOccurs="0"
+                     fixed="true"
+                     type="xs:boolean">
+            <xs:annotation>
+               <xs:documentation>Falls die Identität eines der Elternteile nicht nachgewiesen ist, ist die Namensführung des Kindes auch nicht nachgewiesen. Dies wird hier mitgeteilt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="geburtstag" type="xida:TeilbekanntesDatumMitUnbekannt">
+            <xs:annotation>
+               <xs:documentation>Hier wird das Geburtsdatum mitgeteilt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="geburtsort" type="dinspec91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Hier wird der Geburtsort übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="geschlecht" type="xig:Code.Geschlecht">
+            <xs:annotation>
+               <xs:documentation>Hier wird das Geschlecht des Kindes mitgeteilt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="geburtseintrag" type="xpersonenstand:Quelleintrag">
+            <xs:annotation>
+               <xs:documentation>Hier wird der Geburtseintrag des Kindes mitgeteilt. Diese wird teilweise als Suchkriterium für das Sorgeregister eingesetzt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="StA2JA.Mutter">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Mutter</title>
+         </xs:appinfo>
+         <xs:documentation>In diesem Datentypen werden Angaben zur Mutter abgebildet, die dem Jugendamt zur Verfügung gestellt werden.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="namen" type="xpersonenstand:PersonName">
+            <xs:annotation>
+               <xs:documentation>Hier werden die Namen der Mutter mitgeteilt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="anschrift" type="xpersonenstand:Anschrift.Inland">
+            <xs:annotation>
+               <xs:documentation>Hier wird die Anschrift der Mutter mitgeteilt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="geburtstag" type="xida:TeilbekanntesDatumMitUnbekannt">
+            <xs:annotation>
+               <xs:documentation>Hier wird das Geburtsdatum der Mutter mitgeteilt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="identitaetNichtNachgewiesen"
+                     minOccurs="0"
+                     fixed="true"
+                     type="xs:boolean">
+            <xs:annotation>
+               <xs:documentation>Falls die Identität der Mutter nicht nachgewiesen wurde, wird dies hier mitgeteilt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="StA2JA.Sorgerechtserklaerung">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Sorgerechtserklärung</title>
+         </xs:appinfo>
+         <xs:documentation>In diesem Datentypen werden Angaben zu einer Sorgerechtserklärung abgebildet, die dem Jugendamt zur Verfügung gestellt werden.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="ausstellendeStelle" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Hier wird der Name der austellenden Stelle für die Sorgerechtserklärung mitgeteilt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="datum" type="xs:date">
+            <xs:annotation>
+               <xs:documentation>Hier wird das Datum der Sorgerechtserklärung mitgeteilt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="urkundsnummer" type="xs:string">
+            <xs:annotation>
+               <xs:documentation>Hier wird die Urkundsnummer der Sorgerechtserklärung mitgeteilt. Dieses Zeichen trägt bei verschiedenen Stellen verschiedene Namen, dient jedoch immer der Identifikation der Erklärung.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="StA2JA.Vater">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Vater</title>
+         </xs:appinfo>
+         <xs:documentation>In diesem Datentypen werden Angaben zum Vater abgebildet, die dem Jugendamt zur Verfügung gestellt werden.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="namen" type="xpersonenstand:PersonName">
+            <xs:annotation>
+               <xs:documentation>Hier werden die Namen des Vaters mitgeteilt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="identitaetNichtNachgewiesen"
+                     minOccurs="0"
+                     fixed="true"
+                     type="xs:boolean">
+            <xs:annotation>
+               <xs:documentation>Falls die Identität des Vaters nicht nachgewiesen wurde, wird dies hier mitgeteilt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="geburtstag" type="xida:TeilbekanntesDatumMitUnbekannt">
+            <xs:annotation>
+               <xs:documentation>Hier wird der Geburtstag des Vaters mitgeteilt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="sorgeberechtigt"
+                     minOccurs="0"
+                     fixed="true"
+                     type="xs:boolean">
+            <xs:annotation>
+               <xs:documentation>Falls der Vater sorgeberechtigt ist, wird dies hier mitgeteilt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="sorgerechtserklaerung"
+                     minOccurs="0"
+                     type="xpersonenstand:StA2JA.Sorgerechtserklaerung">
+            <xs:annotation>
+               <xs:documentation>Falls der Vater sorgeberechtigt ist und dafür eine Sorgerechtserklärung abgegeben wurde, wird diese hier mitgeteilt. Die Sorgeverhältnisse können sich seit Vorlage der Erklärung geändert haben.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="stA2JA.Geburt.141010">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Standesamt (psw)</autor>
+            <leser>Jugendamt (jga)</leser>
+            <rechtsgrundlage>§ 52a Absatz 4 SGB VIII i.V.m. § 57 Abs. 1 Nr. 5 
+und Abs. 2 Nr. 4 PStV sowie § 62 Abs. 4 PStV
+</rechtsgrundlage>
+            <title>Mitteilung der Geburt vom Standesamt an das Jugendamt</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht teilt das Standesamt dem Jugendamt eine Geburt mit. Die Geburt wird in folgenden Fällen mitgeteilt: Wenn die Eltern des Kindes nicht miteinander verheiratet sind. Wenn die Eltern des Kindes miteinander verheiratet sind und eine Folgebeurkundung über die Anerkennung oder gerichtliche Feststellung der Vaterschaft eingetragen wird. Das Jugendamt unterbietet der Mutter aufgrund der Nachricht Beratungsangebote und nimmt bei gemeinsamer Sorge ggf. einen Eintrag im Sorgeregister vor.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xpersonenstand:Nachricht.G2GXP">
+               <xs:sequence>
+                  <xs:element name="mutter" type="xpersonenstand:StA2JA.Mutter">
+                     <xs:annotation>
+                        <xs:documentation>Hier werden Informationen zur Mutter mitgeteilt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="kind" type="xpersonenstand:StA2JA.Kind">
+                     <xs:annotation>
+                        <xs:documentation>Hier werden Angaben zum Kind mitgeteilt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="vater" minOccurs="0" type="xpersonenstand:StA2JA.Vater">
+                     <xs:annotation>
+                        <xs:documentation>Hier werden Angaben zum Vater mitgeteilt, falls diese bekannt sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+</xs:schema>

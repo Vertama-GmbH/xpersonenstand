@@ -8,7 +8,7 @@
 package de.xoev.schemata.basisnachricht.unqualified.g2g._1_1;
 
 import javax.xml.datatype.XMLGregorianCalendar;
-import de.domap.xpsw.xpsw2511.IdentifikationNachricht;
+import de.domap.xpsw.xpsw2611.IdentifikationNachricht;
 import de.osci.xinneres.basisnachricht._7.IdentifikationNachrichtTyp4;
 import de.osci.xinneres.nachrichtentypen._7.IdentifikationNachrichtXInneres;
 import de.xoev.schemata.code._1_0.Code;

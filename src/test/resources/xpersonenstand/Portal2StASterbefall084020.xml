@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ns2:portal2StA.Sterbefall.084020 xmlns:ns2="http://xpsw.domap.de/xpsw2511" xmlns:ns3="http://www.osci.de/xinneres/rueckweisung/6" produkt="DIGT" produkthersteller="Vertama GmbH" produktversion="0.1" standard="XPersonenstand" test="test" version="25.11">
+<ns2:portal2StA.Sterbefall.084020 xmlns:ns2="http://xpsw.domap.de/xpsw2611" xmlns:ns3="http://www.osci.de/xinneres/rueckweisung/6" produkt="DIGT" produkthersteller="Vertama GmbH" produktversion="0.1" standard="XPersonenstand" test="test" version="26.11">
     <nachrichtenkopf.g2g xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:Nachrichtenkopf.G2G">
         <identifikation.nachricht xsi:type="ns2:Identifikation.Nachricht">
             <nachrichtenUUID>FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0</nachrichtenUUID>
-            <nachrichtentyp listURI="urn:xoev-de:xpersonenstand:codelist:nachrichtentyp" listVersionID="25.11">
+            <nachrichtentyp listURI="urn:xoev-de:xpersonenstand:codelist:nachrichtentyp" listVersionID="26.11">
                 <code>084020</code>
                 <name>portal2StA.Sterbefall.084020</name>
             </nachrichtentyp>

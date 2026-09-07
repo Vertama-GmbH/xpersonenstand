@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "com.vertama"
-version = "3.1.1"
+version = "4.0.0"
 
 repositories {
     mavenLocal()
@@ -29,7 +29,7 @@ kotlin {
 jaxb {
     javaGen {
         register("xpersonenstand") {
-            schema = file("src/main/resources/schemas/xpsw.domap.de/xpsw2511/xinneres.xpersonenstand.xsd")
+            schema = file("src/main/resources/schemas/xpsw.domap.de/xpsw2611/xinneres.xpersonenstand.xsd")
             outputDir = file("src/main/java/com/vertama/xpersonenstand/model")
             binding = file("src/main/resources/binding.xjb")
             // -catalog routes external xs:import schemaLocations through src/main/resources/catalog.xml
