@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "com.vertama"
-version = "4.0.0"
+version = "4.0.1"
 
 repositories {
     mavenLocal()
@@ -28,12 +28,19 @@ kotlin {
 
 jaxb {
     javaGen {
-        register("xpersonenstand") {
+        register("xpersonenstand2611") {
             schema = file("src/main/resources/schemas/xpsw.domap.de/xpsw2611/xinneres.xpersonenstand.xsd")
             outputDir = file("src/main/java/com/vertama/xpersonenstand/model")
             binding = file("src/main/resources/binding.xjb")
             // -catalog routes external xs:import schemaLocations through src/main/resources/catalog.xml
             // → vendored copies under src/main/resources/schemas/. No network at codegen time.
+            args = listOf("-extension", "-catalog", "src/main/resources/catalog.xml")
+        }
+        // XPersonenstand 25.11, kept alongside the current version for the transition period
+        register("xpersonenstand2511") {
+            schema = file("src/main/resources/schemas/xpsw.domap.de/xpsw2511/xinneres.xpersonenstand.xsd")
+            outputDir = file("src/main/java/com/vertama/xpersonenstand/_2511/model")
+            binding = file("src/main/resources/binding-2511.xjb")
             args = listOf("-extension", "-catalog", "src/main/resources/catalog.xml")
         }
     }

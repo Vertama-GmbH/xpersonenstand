@@ -1,4 +1,4 @@
-package xpersonenstand
+package xpersonenstand._2611
 
 import com.vertama.xpersonenstand._2611.XPersonenstand.validateOrThrow
 import com.vertama.xpersonenstand._2611.XPersonenstandMarshaller
@@ -23,7 +23,7 @@ class XPersonenstandTest {
 
     @Test
     fun `validation of invalid Portal2StAGeburt081020 throws error`() {
-        val invalidXml = this::class.java.getResource("/xpersonenstand/Portal2StAGeburt081020_invalid.xml")
+        val invalidXml = this::class.java.getResource("/xpersonenstand/_2611/Portal2StAGeburt081020_invalid.xml")
             ?: error("XML file of basisnachricht not found in resources.")
 
         val unmarshalFromFile = XPersonenstandMarshaller.unmarshalFromInputStream(invalidXml.openStream(), Portal2StAGeburt081020::class.java)
@@ -44,7 +44,7 @@ class XPersonenstandTest {
 
     @Test
     fun `validation of valid Portal2StAGeburt081020 throws no error`() {
-        val validXml = this::class.java.getResource("/xpersonenstand/Portal2StAGeburt081020.xml")
+        val validXml = this::class.java.getResource("/xpersonenstand/_2611/Portal2StAGeburt081020.xml")
             ?: error("XML file of basisnachricht not found in resources.")
 
         val unmarshalFromFile = XPersonenstandMarshaller.unmarshalFromInputStream(validXml.openStream(), Portal2StAGeburt081020::class.java)
@@ -53,7 +53,7 @@ class XPersonenstandTest {
 
     @Test
     fun `create valid Portal2StAGeburt081020 xml`() {
-        val expectedXml = this::class.java.getResource("/xpersonenstand/Portal2StAGeburt081020.xml")?.readText()
+        val expectedXml = this::class.java.getResource("/xpersonenstand/_2611/Portal2StAGeburt081020.xml")?.readText()
             ?: error("Expected XML file of basisnachricht not found in resources.")
 
         val portal2StAGeburt081020 = buildPortal2StAGeburt081020()
@@ -70,7 +70,7 @@ class XPersonenstandTest {
 
     @Test
     fun `create valid Portal2StASterbefall084020 xml`() {
-        val expectedXml = this::class.java.getResource("/xpersonenstand/Portal2StASterbefall084020.xml")?.readText()
+        val expectedXml = this::class.java.getResource("/xpersonenstand/_2611/Portal2StASterbefall084020.xml")?.readText()
             ?: error("Expected XML file of basisnachricht not found in resources.")
 
         val portal2StASterbefall084020 = buildPortal2StASterbefall084020()

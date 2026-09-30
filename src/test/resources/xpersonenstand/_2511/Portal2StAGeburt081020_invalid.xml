@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:portal2StA.Geburt.081020 xmlns:ns2="http://xpsw.domap.de/xpsw2505" produkt="DIGG" produkthersteller="Vertama GmbH" produktversion="0.1" standard="XPersonenstand" test="test" version="25.05">
+    <nachrichtenkopf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:Nachrichtenkopf.G2G">
+        <identifikation.nachricht xsi:type="ns2:Identifikation.Nachricht">
+            <nachrichtenUUID>FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0</nachrichtenUUID>
+            <nachrichtentyp listURI="urn:xoev-de:xpersonenstand:codelist:nachrichtentyp" listVersionID="25.05">
+                <code>081020</code>
+                <name>portal2StA.Geburt.081020</name>
+            </nachrichtentyp>
+            <erstellungszeitpunkt>2024-11-01T10:00:00.000+00:02</erstellungszeitpunkt>
+        </identifikation.nachricht>
+        <leser>
+            <behoerdenkennung>
+                <praefix listURI="urn:xoev-de:bund:bmi:bit:codeliste:dvdv.praefix" listVersionID="37">
+                    <code>psw</code>
+                </praefix>
+                <kennung listURI="urn:de:bund:destatis:bevoelkerungsstatistik:schluessel:standesamtsnummern" listVersionID="2023-01-05">
+                    <code>11007007</code>
+                </kennung>
+            </behoerdenkennung>
+            <behoerdenname>Test Standesamt</behoerdenname>
+        </leser>
+        <autor>
+            <behoerdenkennung>
+                <praefix listURI="urn:xoev-de:bund:bmi:bit:codeliste:dvdv.praefix" listVersionID="37">
+                    <code>sap</code>
+                </praefix>
+                <kennung listURI="urn:de:xibehoerde:test:einrichtungen" listVersionID="1.7.8">
+                    <code>000000013</code>
+                </kennung>
+            </behoerdenkennung>
+            <erreichbarkeit>
+                <kanal listURI="urn:de:xoev:codeliste:erreichbarkeit" listVersionID="1">
+                    <code>03</code>
+                </kanal>
+                <kennung>555-0100</kennung>
+            </erreichbarkeit>
+            <anschrift>
+                <gebaeude>
+                    <hausnummer>1</hausnummer>
+                    <postleitzahl>10117</postleitzahl>
+                    <strasse>AutorStrasse</strasse>
+                    <wohnort>AutorWohnort</wohnort>
+                </gebaeude>
+            </anschrift>
+            <behoerdenname>Test Autor Name</behoerdenname>
+        </autor>
+    </nachrichtenkopf>
+    <ns2:nameEinrichtung>NameEinrichtung</ns2:nameEinrichtung>
+    <ns2:geburtsangaben>
+        <ns2:ort>
+            <ns2:strasse>Straße der Geburtsangaben</ns2:strasse>
+            <ns2:hausnummer>1</ns2:hausnummer>
+            <ns2:ort>Geburtsort</ns2:ort>
+        </ns2:ort>
+        <ns2:tag>2024-11-01+00:02</ns2:tag>
+        <ns2:uhrzeit>10:00</ns2:uhrzeit>
+    </ns2:geburtsangaben>
+    <ns2:kind>
+        <ns2:geschlecht listURI="urn:xoev-de:xinneres:codeliste:geschlecht" listVersionID="1">
+            <code>w</code>
+        </ns2:geschlecht>
+    </ns2:kind>
+    <ns2:mutter>
+        <ns2:standard>
+            <ns2:namen>
+                <ns2:familienname>
+                    <name>Lee</name>
+                </ns2:familienname>
+                <ns2:vornamen>
+                    <name>Sophia</name>
+                </ns2:vornamen>
+            </ns2:namen>
+            <ns2:geburtsdatum>2024-11-01+00:02</ns2:geburtsdatum>
+            <ns2:anschrift>
+                <hausnummer>2</hausnummer>
+                <postleitzahl>10117</postleitzahl>
+                <strasse>Straße der Mutter</strasse>
+                <wohnort>Wohnortdermutter</wohnort>
+            </ns2:anschrift>
+        </ns2:standard>
+    </ns2:mutter>
+</ns2:portal2StA.Geburt.081020>

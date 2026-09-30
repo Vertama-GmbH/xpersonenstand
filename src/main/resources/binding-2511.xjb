@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jaxb:bindings
+  version="3.0"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:jaxb="https://jakarta.ee/xml/ns/jaxb"
+  xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+  xmlns:annox="urn:jaxb.jvnet.org:annox"
+  xmlns:xink="http://www.osci.de/xinneres/basisnachricht/6"
+  jaxb:extensionBindingPrefixes="xjc annox"
+>
+
+  <!-- Get rid of compilation errors in the generated Code where 'Todestag' cannot
+       be the name of a static nested class inside of class 'Todestag' (WAT). Just rename the type
+       to 'InnerTodestag' -->
+  <!-- XPath patterns developed with the help of http://xpather.com -->
+  <jaxb:bindings schemaLocation="schemas/xpsw.domap.de/xpsw2511/xpersonenstand-nachrichten-portale.xsd" node="/xs:schema">
+    <!-- These bindings must match exactly one element in the schema. Class name remapping can
+         (only) be done on 'xs:simpleType' and 'xs:complexType' elements. -->
+    <jaxb:bindings
+      node="//xs:complexType[@name='Portal2StA.Sterbefall']//xs:choice/xs:element[@name='todestag']/xs:complexType">
+      <jaxb:class name="InnerTodestag" />
+    </jaxb:bindings>
+
+    <jaxb:bindings
+      node="//xs:complexType[@name='Todesbescheinigung.Sterbefall']//xs:choice/xs:element[@name='todestag']/xs:complexType">
+      <jaxb:class name="InnerTodestag" />
+    </jaxb:bindings>
+
+    <jaxb:bindings
+      node="//xs:element[@name='portal2StA.Sterbefall.084010']//xs:sequence/xs:element[@name='todestag']/xs:complexType">
+      <jaxb:class name="InnerTodestag" />
+    </jaxb:bindings>
+
+  </jaxb:bindings>
+
+  <!-- The external schemas (xinneres, xoev) are shared with the 2611 model, but the classes generated from them
+       reference the version specific xpsw types (@XmlSeeAlso). To let both versions live in the same jar, the
+       2511 variants are moved below 'com.vertama.xpersonenstand._2511.model'. The xpsw2511 package itself is
+       unique and stays untouched. -->
+  <jaxb:bindings schemaLocation="http://www.osci.de/xinneres/allgemeinername/4/xinneres-name.xsd" node="/xs:schema">
+    <jaxb:schemaBindings>
+      <jaxb:package name="com.vertama.xpersonenstand._2511.model.de.osci.xinneres.allgemeinername._4"/>
+    </jaxb:schemaBindings>
+  </jaxb:bindings>
+
+  <jaxb:bindings schemaLocation="http://www.osci.de/xinneres/auslandsanschrift/5/xinneres-auslandsanschrift.xsd" node="/xs:schema">
+    <jaxb:schemaBindings>
+      <jaxb:package name="com.vertama.xpersonenstand._2511.model.de.osci.xinneres.auslandsanschrift._5"/>
+    </jaxb:schemaBindings>
+  </jaxb:bindings>
+
+  <jaxb:bindings schemaLocation="http://www.osci.de/xinneres/basisnachricht/7/xinneres-basisnachricht.xsd" node="/xs:schema">
+    <jaxb:schemaBindings>
+      <jaxb:package name="com.vertama.xpersonenstand._2511.model.de.osci.xinneres.basisnachricht._7"/>
+    </jaxb:schemaBindings>
+  </jaxb:bindings>
+
+  <jaxb:bindings schemaLocation="http://www.osci.de/xinneres/behoerde/7/xinneres-behoerde.xsd" node="/xs:schema">
+    <jaxb:schemaBindings>
+      <jaxb:package name="com.vertama.xpersonenstand._2511.model.de.osci.xinneres.behoerde._7"/>
+    </jaxb:schemaBindings>
+  </jaxb:bindings>
+
+  <jaxb:bindings schemaLocation="http://www.osci.de/xinneres/codes/gemeindeverzeichnis/3/xinneres-codes-gemeindeverzeichnis.xsd" node="/xs:schema">
+    <jaxb:schemaBindings>
+      <jaxb:package name="com.vertama.xpersonenstand._2511.model.de.osci.xinneres.codes.gemeindeverzeichnis._3"/>
+    </jaxb:schemaBindings>
+  </jaxb:bindings>
+
+  <jaxb:bindings schemaLocation="http://www.osci.de/xinneres/geschlecht/1/xinneres-geschlecht.xsd" node="/xs:schema">
+    <jaxb:schemaBindings>
+      <jaxb:package name="com.vertama.xpersonenstand._2511.model.de.osci.xinneres.geschlecht._1"/>
+    </jaxb:schemaBindings>
+  </jaxb:bindings>
+
+  <jaxb:bindings schemaLocation="http://www.osci.de/xinneres/idnr/2/xinneres-idnr.xsd" node="/xs:schema">
+    <jaxb:schemaBindings>
+      <jaxb:package name="com.vertama.xpersonenstand._2511.model.de.osci.xinneres.idnr._2"/>
+    </jaxb:schemaBindings>
+  </jaxb:bindings>
+
+  <jaxb:bindings schemaLocation="http://www.osci.de/xinneres/meldeanschrift/5/xinneres-meldeanschrift.xsd" node="/xs:schema">
+    <jaxb:schemaBindings>
+      <jaxb:package name="com.vertama.xpersonenstand._2511.model.de.osci.xinneres.meldeanschrift._5"/>
+    </jaxb:schemaBindings>
+  </jaxb:bindings>
+
+  <jaxb:bindings schemaLocation="http://www.osci.de/xinneres/nachrichtentypen/7/xinneres-nachrichtentypen.xsd" node="/xs:schema">
+    <jaxb:schemaBindings>
+      <jaxb:package name="com.vertama.xpersonenstand._2511.model.de.osci.xinneres.nachrichtentypen._7"/>
+    </jaxb:schemaBindings>
+  </jaxb:bindings>
+
+  <jaxb:bindings schemaLocation="http://www.osci.de/xinneres/postanschrift/5/xinneres-postanschrift.xsd" node="/xs:schema">
+    <jaxb:schemaBindings>
+      <jaxb:package name="com.vertama.xpersonenstand._2511.model.de.osci.xinneres.postanschrift._5"/>
+    </jaxb:schemaBindings>
+  </jaxb:bindings>
+
+  <jaxb:bindings schemaLocation="http://www.osci.de/xinneres/rueckweisung/6/xinneres-rueckweisung.xsd" node="/xs:schema">
+    <jaxb:schemaBindings>
+      <jaxb:package name="com.vertama.xpersonenstand._2511.model.de.osci.xinneres.rueckweisung._6"/>
+    </jaxb:schemaBindings>
+  </jaxb:bindings>
+
+  <jaxb:bindings schemaLocation="http://xoev.de/schemata/basisnachricht/unqualified/g2g/1_1/xoev-basisnachricht-unqualified-g2g_1.1.xsd" node="/xs:schema">
+    <jaxb:schemaBindings>
+      <jaxb:package name="com.vertama.xpersonenstand._2511.model.de.xoev.schemata.basisnachricht.unqualified.g2g._1_1"/>
+    </jaxb:schemaBindings>
+  </jaxb:bindings>
+
+  <jaxb:bindings schemaLocation="http://xoev.de/schemata/code/1_0/xoev-code.xsd" node="/xs:schema">
+    <jaxb:schemaBindings>
+      <jaxb:package name="com.vertama.xpersonenstand._2511.model.de.xoev.schemata.code._1_0"/>
+    </jaxb:schemaBindings>
+  </jaxb:bindings>
+
+  <!-- properties with the type Tagesdatum have to be without timezone and therefore should use LocalDate instead of the
+       default XMLGregorianCalendar -->
+  <jaxb:bindings schemaLocation="http://www.osci.de/xinneres/datum/2/xinneres-datum.xsd" node="/xs:schema">
+    <jaxb:schemaBindings>
+      <jaxb:package name="com.vertama.xpersonenstand._2511.model.de.osci.xinneres.datum._2"/>
+    </jaxb:schemaBindings>
+    <jaxb:bindings node="//xs:simpleType[@name='Tagesdatum']">
+      <xjc:javaType name="java.time.LocalDate" adapter="com.vertama.xpersonenstand._2511.adapters.LocalDateAdapter"/>
+    </jaxb:bindings>
+  </jaxb:bindings>
+
+</jaxb:bindings>

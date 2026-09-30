@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:portal2StA.Sterbefall.084020 xmlns:ns2="http://xpsw.domap.de/xpsw2511" xmlns:ns3="http://www.osci.de/xinneres/rueckweisung/6" produkt="DIGT" produkthersteller="Vertama GmbH" produktversion="0.1" standard="XPersonenstand" test="test" version="25.11">
+    <nachrichtenkopf.g2g xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:Nachrichtenkopf.G2G">
+        <identifikation.nachricht xsi:type="ns2:Identifikation.Nachricht">
+            <nachrichtenUUID>FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF0</nachrichtenUUID>
+            <nachrichtentyp listURI="urn:xoev-de:xpersonenstand:codelist:nachrichtentyp" listVersionID="25.11">
+                <code>084020</code>
+                <name>portal2StA.Sterbefall.084020</name>
+            </nachrichtentyp>
+            <erstellungszeitpunkt>2024-11-01T10:00:00.000+00:02</erstellungszeitpunkt>
+        </identifikation.nachricht>
+        <leser>
+            <verzeichnisdienst listURI="urn:xoev-de:kosit:codeliste:verzeichnisdienst" listVersionID="3">
+                <code>DVDV</code>
+            </verzeichnisdienst>
+            <kennung>psw:11007007</kennung>
+            <name>Test Standesamt</name>
+        </leser>
+        <autor>
+            <verzeichnisdienst listURI="urn:xoev-de:kosit:codeliste:verzeichnisdienst" listVersionID="3">
+                <code>DVDV</code>
+            </verzeichnisdienst>
+            <kennung>sap:000000013</kennung>
+            <name>Test Standesamtportal</name>
+            <erreichbarkeit>
+                <kanal listURI="urn:de:xoev:codeliste:erreichbarkeit" listVersionID="1">
+                    <code>03</code>
+                </kanal>
+                <kennung>555-0100</kennung>
+            </erreichbarkeit>
+        </autor>
+    </nachrichtenkopf.g2g>
+    <anschrift.leser>
+        <gebaeude>
+            <hausnummer>1</hausnummer>
+            <postleitzahl>10117</postleitzahl>
+            <strasse>LeserStrasse</strasse>
+            <wohnort>LeserWohnort</wohnort>
+        </gebaeude>
+    </anschrift.leser>
+    <anschrift.autor>
+        <gebaeude>
+            <hausnummer>1</hausnummer>
+            <postleitzahl>10117</postleitzahl>
+            <strasse>AutorStrasse</strasse>
+            <wohnort>AutorWohnort</wohnort>
+        </gebaeude>
+    </anschrift.autor>
+    <ns2:ansprechpartner>Ansprechpartner</ns2:ansprechpartner>
+    <ns2:sterbefall>
+        <ns2:todestag>
+            <ns2:todestag>
+                <ns2:todestag>2024-11-01</ns2:todestag>
+                <ns2:todeszeit exakt="true">05:21</ns2:todeszeit>
+            </ns2:todestag>
+        </ns2:todestag>
+        <ns2:sterbeort>
+            <ns2:strasse>Sterbeort Strasse</ns2:strasse>
+            <ns2:hausnummer>2</ns2:hausnummer>
+            <ns2:ort>Sterbeort Ort</ns2:ort>
+        </ns2:sterbeort>
+    </ns2:sterbefall>
+    <ns2:verstorbener>
+        <ns2:vorname>Vorname</ns2:vorname>
+        <ns2:familienname>Familienname</ns2:familienname>
+        <ns2:geschlecht listURI="urn:xoev-de:xinneres:codeliste:geschlecht" listVersionID="1">
+            <code>w</code>
+        </ns2:geschlecht>
+    </ns2:verstorbener>
+    <ns2:anzeigender>
+        <ns2:kontaktdaten>
+            <kanal listURI="urn:de:xoev:codeliste:erreichbarkeit" listVersionID="1">
+                <code>03</code>
+            </kanal>
+            <kennung>555-0100</kennung>
+        </ns2:kontaktdaten>
+        <ns2:namen>
+            <ns2:nameOrganisation>Organisationsname</ns2:nameOrganisation>
+        </ns2:namen>
+    </ns2:anzeigender>
+</ns2:portal2StA.Sterbefall.084020>

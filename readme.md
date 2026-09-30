@@ -2,7 +2,14 @@
 
 This Java library simplifies the process of generating XML files conforming to the specifications defined within the "XPersonenstand" standard. By providing Java classes directly derived from the XPersonenstand schema, this library eliminates the need for manual XML construction, reducing errors and streamlining development.
 
-The current supported version of the XPersonenstand standard is 26.11
+The current supported version of the XPersonenstand standard is 26.11. The previous version 25.11 is still available side by side.
+
+| Standard | Kotlin/Java package (marshaller, validator) | Message classes | Shared classes (`de.osci.xinneres.*`, `de.xoev.*`) |
+|----------|---------------------------------------------|-----------------|----------------------------------------------------|
+| 26.11    | `com.vertama.xpersonenstand._2611`          | `de.domap.xpsw.xpsw2611` | `de.osci.xinneres.*`, `de.xoev.*` |
+| 25.11    | `com.vertama.xpersonenstand._2511`          | `de.domap.xpsw.xpsw2511` | `com.vertama.xpersonenstand._2511.model.de.osci.xinneres.*`, `com.vertama.xpersonenstand._2511.model.de.xoev.*` |
+
+The shared classes differ between the two versions, so the ones of 25.11 live under the `_2511.model` prefix.
 
 ## Features
 
